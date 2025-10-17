@@ -1,0 +1,26 @@
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes swing-reverse {
+    0%, 100% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+}
+
+
+.animate-swing {
+    animation: swing 3s ease-in-out infinite;
+}
+
+.animate-swing-reverse {
+    animation: swing-reverse 3s ease-in-out infinite;
+}

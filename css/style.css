@@ -40,24 +40,6 @@ body {
     box-shadow: 0 10px 40px rgba(139, 69, 19, 0.4);
 }
 
-/* Swing Animations */
-@keyframes swing {
-    0%, 100% {
-        transform: rotate(-2deg);
-    }
-    50% {
-        transform: rotate(2deg);
-    }
-}
-
-@keyframes swing-reverse {
-    0%, 100% {
-        transform: rotate(2deg);
-    }
-    50% {
-        transform: rotate(-2deg);
-    }
-}
 
 @keyframes pulse-glow {
     0%, 100% {
@@ -259,14 +241,6 @@ body {
 
 .glow-pulse {
     animation: pulse-glow 2s infinite;
-}
-
-.animate-swing {
-    animation: swing 3s ease-in-out infinite;
-}
-
-.animate-swing-reverse {
-    animation: swing-reverse 3s ease-in-out infinite;
 }
 
 .animate-float {

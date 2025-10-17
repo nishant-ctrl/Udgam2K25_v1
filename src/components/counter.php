@@ -27,34 +27,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Menu Toggle
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const hamburgerIcon = document.getElementById('hamburgerIcon');
-        const closeIcon = document.getElementById('closeIcon');
-
-        if (menuButton) {
-            menuButton.addEventListener('click', function() {
-                if(mobileMenu.classList.contains('translate-x-full')) {
-                    mobileMenu.classList.remove('translate-x-full');
-                } else {
-                    mobileMenu.classList.add('translate-x-full');
-                }
-                hamburgerIcon.classList.toggle('hidden');
-                closeIcon.classList.toggle('hidden');
-            });
-
-            // Close menu when clicking on a link
-            const menuLinks = mobileMenu.querySelectorAll('.menu-link');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('translate-x-full');
-                    hamburgerIcon.classList.remove('hidden');
-                    closeIcon.classList.add('hidden');
-                });
-            });
-        }
-
+     
         // Countdown Timer
         const specificDate = new Date(2025, 10, 4, 11, 59, 59);
         console.log('Countdown to:', specificDate);
@@ -96,15 +69,15 @@
                 
                 setTimeout(() => {
                     if (hours < 18 && hours >= 6) {
-                        imageEle.src = './assests/images/bg2.jpeg';
+                        imageEle.src = './assets/images/bg2.jpeg';
                     } else {
-                        imageEle.src = './assests/images/bg1.jpeg';
+                        imageEle.src = './assets/images/bg1.jpeg';
                     }
 
                     setTimeout(() => {
                         imageEle.style.opacity = '1';
                     }, 50);
-                }, 2000);
+                }, 1000);
             }
         }
 
@@ -148,27 +121,5 @@
         // Update intervals
         setInterval(updateCountdown, 1000);
         setInterval(imgUpdate, 3 * 60 * 60 * 1000); // Update every 3 hours
-
-        // Add active class to current nav item
-        const sections = document.querySelectorAll('div[id]');
-        const navLinks = document.querySelectorAll('nav a, #mobileMenu a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
     });
 </script>
