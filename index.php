@@ -5,6 +5,9 @@ switch ($x[2]) {
     case '':
         include 'src/pages/home.php';
         break;
+    case 'home':
+        include 'src/pages/home.php';
+        break;
     case 'aboutus':
         include 'src/pages/aboutus.php';
         break;

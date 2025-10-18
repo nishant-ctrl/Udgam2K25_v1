@@ -12,8 +12,9 @@
   --color-accent-orange: #d37f3a;
 
 }
+
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 html {
