@@ -1,0 +1,311 @@
+/* style.css - Text Style Overhaul for Vintage Look */
+
+/* 1. Font Definitions */
+.font-luckiest-guy {
+    font-family: 'Luckiest Guy', cursive;
+}
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* 2. Background Carnival Stage (No Change) */
+
+/* ... (carnival-content-frame and other structural/ambient styles unchanged) ... */
+
+
+/* 3. Main Title Gradient and Glow - VINTAGE HIGH CONTRAST */
+#fest-title {
+    /* Gradient: Warm vintage gold-to-brown */
+    background-image: linear-gradient(90deg, #D4A373, #8B5E3C); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Vintage Outline + Shadow for depth */
+    text-shadow:
+        /* 1. Dark Coffee Outline for bold contrast */
+        -3px -3px 0 #804e3e,
+         3px -3px 0 #513025,
+        -3px  3px 0 #4E2A1E,
+         3px  3px 0 #4E2A1E,
+
+        /* 2. Creamy highlight layer for antique glow */
+        0 0 10px rgba(255, 245, 230, 0.8),
+
+        /* 3. Deep Shadow for dimensional feel */
+        6px 6px 0px rgba(30, 15, 10, 0.9);
+    
+    /* Optional: Slight blur for soft vintage tone */
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+}
+
+
+/* Header Description Paragraph */
+.text-gray-800 {
+    /* Force a very dark, slightly maroon color for the vintage feel against light BG */
+    color: #4A1414; 
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5); 
+}
+
+
+/* 4. Committee Title Card */
+/* ... (carnival-title-card structural styles unchanged) ... */
+#committee-title-text {
+    /* HIGH CONTRAST: Red text with white outline */
+    background: linear-gradient(90deg, #DC2626, #B91C1C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+        2px 2px 0px rgba(255, 255, 255, 0.7), 
+        -2px -2px 0px rgba(255, 255, 255, 0.7);
+}
+
+
+/* 5. Committee Labels */
+.committee-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Warm vintage gradient: soft gold → deep brown */
+    background: linear-gradient(90deg, #D4A373, #8B5E3C);
+
+    /* Rich coffee-colored border for contrast */
+    border: 2px solid #4E2A1E;
+
+    /* Softer, deeper shadow for vintage depth */
+    box-shadow:
+        0 5px 15px rgba(30, 15, 10, 0.5),
+        inset 0 2px 4px rgba(255, 245, 230, 0.2); /* subtle inner glow */
+
+    /* Rounded corners and spacing for classic badge feel */
+    border-radius: 12px;
+    padding: 0.5rem 1.5rem;
+
+    /* Optional: text style if needed inside */
+    color: #FFF8E7; /* warm off-white text */
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(40, 20, 10, 0.8);
+}
+
+.committee-label p { 
+    /* Darker text for visibility on light gold background of the label */
+    color: #4A1414; /* Deep Maroon */
+    text-shadow: 0.5px 0.5px 0px rgba(255,255,255,0.8); 
+}
+@keyframes pulse-slow { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.9); } }
+.animate-pulse-slow { animation: pulse-slow 2s infinite ease-in-out; }
+
+
+/* ==================================================================== */
+/* --- 6. MEMBER CARDS TEXT STYLES --- */
+/* ==================================================================== */
+/* NOTE: The h3 in the HTML had a text-yellow-100 class which was removed in the previous step,
+   allowing the CSS to fully control the color. */
+
+/* Text Styling Inside Cards - HIGH CONTRAST */
+.carnival-member-card h3 { 
+    color: #DC2626; /* Deep Red for names */
+    text-shadow: 
+        1px 1px 0px #fff, /* White outline */
+        -1px -1px 0px #fff,
+        2px 2px 2px rgba(0, 0, 0, 0.3); /* Subtle black drop shadow for depth */
+}
+.carnival-member-card p { 
+    color: #4A1414; /* Deep Maroon for roles/sub-text */
+    text-shadow: none; 
+}
+
+
+/* 7. CONTACT ICONS (No changes to icon colors needed, as they are already set for high contrast) */
+/* ... (Contact icon styles remain the same) ... */
+/* ==================================================================== */
+/* --- 6. MEMBER CARDS (INDIVIDUAL CARNIVAL IMAGE FRAME) --- */
+/* ==================================================================== */
+
+.carnival-member-card {
+    /* Dimensions matching the content and frame aspect ratio */
+    width: 300px; 
+    height: 450px; 
+    
+    background: none; 
+    border: none;
+    
+    position: relative;
+    /* CRITICAL: Hides the oversized background's edges */
+    overflow: hidden; 
+    
+    z-index: 20;
+    /* CRITICAL FIX: Ensures no box-shadow is on the main div */
+    box-shadow: none; 
+    
+    transform: rotate(0deg); 
+    transition: all 0.3s ease-in-out;
+    clip-path: none; 
+}
+
+/* Hover: subtle rotation and zoom */
+.carnival-member-card:hover {
+    transform: scale(1.03) rotate(0deg); 
+    box-shadow: none; 
+}
+
+/* --- Pseudo-element containing the background image and the SHAPE-CONFORMING SHADOW --- */
+.carnival-member-card::before {
+    content: '';
+    position: absolute;
+    /* Oversize the image to clip off any dark/fuzzy edges */
+    top: -10px; 
+    left: -10px;
+    width: calc(100% + 20px); 
+    height: calc(100% + 20px); 
+    
+    /* NOTE: Adjust path/extension if your file is .jpg! */
+    background-image: url('../assets/images/leadFrame.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+    /* SHAPE-CONFORMING SHADOW (applied to the image shape) */
+    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.4)); 
+    transition: filter 0.3s ease-in-out; 
+    
+    z-index: -1; /* Place behind the content */
+}
+
+/* Hover effect on the image's shape shadow */
+.carnival-member-card:hover::before {
+    filter: 
+        drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5))   /* Softer, slightly smaller dark shadow */
+        drop-shadow(0 0 8px rgba(159, 114, 1, 0.648))    /* Subtle yellow glow */
+        drop-shadow(0 0 15px rgba(255, 223, 0, 0.2));  /* Extended glow for smooth blending */
+    transition: filter 0.3s ease-in-out;
+}
+
+/* --- Internal Content Wrapper --- */
+.card-content-wrapper {
+    /* Padding adjusted to fit content inside the yellow frame area */
+    padding-top: 60px; 
+    padding-left: 45px; 
+    padding-right: 45px; 
+    padding-bottom: 30px;
+    
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0;
+    box-sizing: border-box;
+
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+}
+
+/* Text Styling Inside Cards */
+.carnival-member-card h3 { 
+    color: #dc2626; /* Red for names */
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.5); 
+}
+.carnival-member-card p { 
+    color: #444; /* Dark gray for roles */
+    text-shadow: none; 
+}
+
+
+/* --- Avatar Integration --- */
+.member-card .member-avatar {
+    background-image: none !important; 
+    background-color: #fef08a; /* Matches the inner frame background */
+    position: relative; overflow: hidden;
+    
+    /* Carnival Ring Effect */
+    box-shadow: 0 0 10px rgba(0,0,0,0.4), 0 0 0 5px #facc15; 
+    border: 3px solid #fff !important; 
+    
+    text-indent: -9999px; line-height: 0; font-size: 0;
+}
+
+.member-card:hover .member-avatar {
+    transform: scale(1.05) rotate(-3deg); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.6), 0 0 0 6px #8606069f; /* Red ring on hover */
+}
+.avatar-star { z-index: 2; }
+@keyframes star-sparkle { /* ... */ }
+
+
+/* 7. Get in Touch Button (Final Style) */
+.carnival-button {
+    background-image: linear-gradient(90deg, #ef4444, #f97316); 
+    color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    border: 2px solid #b91c1c; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    margin-top: 25px; /* Pushed toward the bottom */
+    width: 90%; 
+    max-width: 250px;
+}
+
+.carnival-button:hover {
+    transform: translateY(-5px) scale(1.03); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 15px rgba(255, 255, 0, 0.7);
+    background-image: linear-gradient(90deg, #dc2626, #fbbf24); 
+    filter: none; 
+}
+.material-icons { color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+.background-dots { display: none; }
+
+/* style.css - Focus on the Contact Icon Styles */
+
+/* ==================================================================== */
+/* --- 7. CONTACT ICONS (ALIGNED AND STYLED) --- */
+/* ==================================================================== */
+
+.contact-icons-wrapper {
+    /* Precise control over positioning the whole icon group */
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 10px; /* Adjust spacing below the role/name */
+    margin-bottom: 10px; /* Add margin above the tent area (approximate) */
+    width: 100%; 
+    position: relative; 
+    z-index: 2; 
+    
+    /* Center the block itself within the card */
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.contact-icon-link {
+    /* CRITICAL FIX: Ensure icon is perfectly centered in the circle */
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    width: 45px; 
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a46c0d, #8e3f07bc);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff; 
+    transition: all 0.3s ease;
+    text-decoration: none; 
+}
+
+.contact-icon-link:hover {
+    transform: translateY(-3px) scale(1.1);
+    background: linear-gradient(135deg, #892c049a, #dc2626);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 0, 0.7);
+}
+
+.contact-icon-link .material-icons,
+.contact-icon-link svg {
+    /* CRITICAL FIX: Standardize size and alignment for both icon types */
+    font-size: 24px; /* For Material Icons */
+    width: 24px; /* For SVG */
+    height: 24px; /* For SVG */
+    color: #fff;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.6)); 
+    
+    /* Minor vertical adjustment to account for font symbol baseline differences (optional tweak) */
+    transform: translateY(1px); 
+}
+
+/* Specific styling for LinkedIn SVG (to use inherited color) */
+.contact-icon-link svg path {
+    fill: currentColor; 
+}

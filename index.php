@@ -5,6 +5,9 @@ switch ($x[2]) {
     case '':
         include 'src/pages/home.php';
         break;
+    case 'home':
+        include 'src/pages/home.php';
+        break;
     case 'aboutus':
         include 'src/pages/aboutus.php';
         break;
@@ -15,10 +18,10 @@ switch ($x[2]) {
         include 'src/pages/teams.php';
         break;
     case 'sponsors':
-        include 'src/pages/teams.php';
+        include 'src/pages/sponsers.php';
         break;
     case 'gallery':
-        include 'src/pages/teams.php';
+        include 'src/pages/gallery.php';
         break;
     default:
         http_response_code(404);

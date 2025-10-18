@@ -64,7 +64,7 @@
 </head>
 <link rel="stylesheet" href="./css/universalStyle.css">
 <body class="text-white font-[Poppins] bg-[var(--color-wood-medium)] bg-cover bg-fixed bg-center"
-  style="background-image: url('./assets/images/bga.png');">
+  style="background-image: url('./assets/images/abg.png');">
 <div class="main-content-wrapper" id="mainContent">
   <?php include 'src/components/header.php'?>
   <section
@@ -77,8 +77,8 @@
         About Our Festival
       </button>
 
-      <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-3 sm:mb-4 leading-tight">
-        Celebrating <span class="text-orange-400">Udgam 2025</span>
+      <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-3 sm:mb-4 leading-tight text-amber-100">
+        Celebrating Udgam 2K25
       </h1>
 
       <p class="text-base sm:text-lg md:text-2xl max-w-2xl sm:max-w-3xl mx-auto mb-8 sm:mb-10 px-2">
@@ -87,7 +87,7 @@
       </p>
 
       <a href="#" id="exploreId"
-        class="explore-btn bg-orange-400 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-base sm:text-lg btn-hover inline-block">
+        class="explore-btn bg-orange-400 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-base sm:text-lg">
         Explore Our Story
       </a>
     </div>

@@ -1,6 +1,6 @@
 <!-- Desktop Navigation -->
 <nav class="hidden lg:flex justify-center items-start absolute -top-3 right-0 gap-2 xl:gap-3 px-4 z-40 w-full">
-    <a href="/udg2k25" class="nav-item w-36 lg:w-40 xl:w-48 flex-shrink-0 relative cursor-pointer hover-scale transition-transform duration-300 animate-swing delay-100">
+    <a href="home" class="nav-item w-36 lg:w-40 xl:w-48 flex-shrink-0 relative cursor-pointer hover-scale transition-transform duration-300 animate-swing delay-100">
         <img src="./assets/images/plank.png" alt="Home" class="w-full h-auto object-contain">
         <span class="absolute inset-0 flex items-center justify-center text-sm lg:text-base font-bold text-white/80 hover:text-white/90 transition-all px-2">Home</span>
     </a>
@@ -47,7 +47,7 @@
 
     <!-- Menu Items -->
     <div class="px-4 sm:px-6 py-6 space-y-3">
-        <a href="/udg2k25" class="menu-link group flex items-center gap-3 px-4 py-3 text-white/90 hover:text-white bg-amber-800/40 hover:bg-amber-700/60 rounded-xl transition-all duration-300 font-medium border border-transparent hover:border-amber-600/30 hover:shadow-lg">
+        <a href="home" class="menu-link group flex items-center gap-3 px-4 py-3 text-white/90 hover:text-white bg-amber-800/40 hover:bg-amber-700/60 rounded-xl transition-all duration-300 font-medium border border-transparent hover:border-amber-600/30 hover:shadow-lg">
             <svg class="w-5 h-5 text-amber-400 group-hover:text-amber-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
             </svg>
