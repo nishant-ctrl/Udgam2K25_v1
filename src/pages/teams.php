@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fest Committees</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/tailwind.js"></script>
     <link rel="stylesheet" href="./css/teams.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;700&display=swap"
@@ -77,6 +77,50 @@
             }
         }
 
+
+        .vintage-text {
+    font-family: 'Georgia', serif;
+    letter-spacing: 1.5px;
+    color: #4E2A1E;
+    text-shadow: 2px 2px 6px rgba(120, 60, 10, 0.4);
+  }
+
+  /* Divider animation */
+  .vintage-divider {
+    background: linear-gradient(90deg, #facc15, #d97706, #facc15);
+    box-shadow: 0 0 8px rgba(250, 204, 21, 0.7);
+  }
+
+  .vintage-dot {
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 6px rgba(250, 204, 21, 0.5); transform: scale(1); }
+    50% { box-shadow: 0 0 12px rgba(250, 204, 21, 0.9); transform: scale(1.2); }
+    100% { box-shadow: 0 0 6px rgba(250, 204, 21, 0.5); transform: scale(1); }
+  }
+
+  /* Text animations */
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
     </style>
 </head>
 
@@ -86,20 +130,26 @@
     <div class="container mx-auto px-4 py-16 text-white relative z-10 carnival-content-frame">
   <?php include 'src/components/header.php'?>
         <header class="text-center mb-16 mt-16">
-            <div class="flex justify-center mb-4">
-                <div
-                    class="w-20 h-1 bg-yellow-300 rounded-full flex justify-between items-center relative after:content-[''] after:absolute after:w-2 after:h-2 after:bg-yellow-300 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-1 after:shadow-md before:content-[''] before:absolute before:w-2 before:h-2 before:bg-yellow-300 before:rounded-full before:top-1/2 before:-translate-y-1/2 before:-right-1 before:shadow-md">
+            <div class="flex flex-col items-center mb-16 relative px-4 sm:px-6 md:px-0">
+                <!-- Vintage Divider with Animation -->
+                <div class="flex justify-center mb-6 relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+                    <div class="w-full h-1 bg-yellow-300 rounded-full relative animate-pulse vintage-divider">
+                        <span class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-yellow-300 rounded-full top-1/2 -translate-y-1/2 -left-2 shadow-md vintage-dot"></span>
+                        <span class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-yellow-300 rounded-full top-1/2 -translate-y-1/2 -right-2 shadow-md vintage-dot"></span>
+                    </div>
                 </div>
+
+                <!-- Fest Title -->
+                <h1 id="fest-title" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold pb-4 font-luckiest-guy uppercase tracking-wide sm:tracking-wider md:tracking-widest vintage-text animate-fade-in text-center">
+                    Our Fest Committees
+                </h1>
+
+                <!-- Fest Description -->
+                <p class="text-base sm:text-lg md:text-xl lg:text-lg mb-10 font-open-sans text-[#4E2A1E] tracking-wide drop-shadow-[1px_1px_2px_rgba(30,15,10,0.4)] vintage-text animate-slide-up text-center max-w-xl sm:max-w-2xl md:max-w-3xl">
+                    Meet the passionate team members who make our college fest a grand success
+                </p>
             </div>
 
-            <h1 id="fest-title"
-                class="text-6xl md:text-7xl font-extrabold pb-4 font-luckiest-guy uppercase tracking-wide">
-                Our Fest Committees
-            </h1>
-            <p
-                class="text-lg mb-10 font-open-sans text-[#4E2A1E] tracking-wide drop-shadow-[1px_1px_2px_rgba(30,15,10,0.4)]">
-                Meet the passionate team members who make our college fest a grand success
-            </p>
 
             <div class="flex justify-center flex-wrap gap-4 mb-16"> <button id="core-team-btn"
                     class="filter-btn active text-lg md:text-xl font-luckiest-guy uppercase">
@@ -164,7 +214,7 @@
                                 <div class="relative flex justify-center mb-4">
                                     <div class="member-avatar w-[170px] h-[170px] rounded-full flex items-center justify-center border-4 border-[#E6B35A]"
                                         style="background-color: #a36025b8;">
-                                        <img src="./assets/images/nis.png" class="w-full h-full object-cover rounded-full"
+                                        <img src="./assets/images/b230073@nitsikkim.ac.in.png" class="w-full h-full object-cover rounded-full"
                                             alt="Ayan Roy Avatar">
                                         <span class="avatar-star absolute top-1 right-1"></span>
                                         <span class="avatar-star absolute bottom-1 left-1 transform rotate-45"></span>
@@ -174,11 +224,11 @@
                                 <div class="text-center">
                                     <h3 class="text-2xl font-bold mb-1 font-luckiest-guy uppercase">AYAN ROY</h3>
                                     <div class="contact-icons-wrapper flex items-center justify-evenly">
-                                        <a href="mailto:b230057@nitsikkim.ac.in" class="contact-icon-link">
+                                        <a href="mailto:b230073@nitsikkim.ac.in" class="contact-icon-link">
                                             <span class="material-icons">mail</span>
                                         </a>
 
-                                        <a href="https://linkedin.com/in/arjunmehta" target="_blank"
+                                        <a href="#" target="_blank"
                                             class="contact-icon-link">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24">
@@ -212,7 +262,7 @@
                                 <div class="relative flex justify-center mb-4">
                                     <div class="member-avatar w-[170px] h-[170px] rounded-full flex items-center justify-center border-4 border-[#E6B35A]"
                                         style="background-color: #a36025b8;">
-                                        <img src="./assets/images/b230011@nitsikkim.ac.in.png" class="w-full h-full object-cover rounded-full"
+                                        <img src="./assets/images/b230011@nitsikkim.ac.inN.png" class="w-full h-full object-cover rounded-full"
                                             alt="Indrani Adhikary Avatar">
                                         <span class="avatar-star absolute top-1 right-1"></span>
                                         <span class="avatar-star absolute bottom-1 left-1 transform rotate-45"></span>
@@ -441,7 +491,7 @@
                             <div class="relative flex justify-center mb-4">
                                 <div class="member-avatar w-[170px] h-[170px] rounded-full flex items-center justify-center border-4 border-[#E6B35A]"
                                     style="background-color: #a36025b8;">
-                                    <img src="./assets/images/nis.png" class="w-full h-full object-cover rounded-full"
+                                    <img src="./assets/images/b230139@nitsikkim.ac.in.png" class="w-full h-full object-cover rounded-full"
                                         alt="Tanisha Chakraborty Avatar">
                                     <span class="avatar-star absolute top-1 right-1"></span>
                                     <span class="avatar-star absolute bottom-1 left-1 transform rotate-45"></span>
@@ -451,11 +501,11 @@
                             <div class="text-center">
                                 <h3 class="text-2xl font-bold mb-1 font-luckiest-guy uppercase">TANISHA CHAKRABORTY</h3>
                                 <div class="contact-icons-wrapper flex items-center justify-evenly">
-                                    <a href="mailto:b230057@nitsikkim.ac.in" class="contact-icon-link">
+                                    <a href="mailto:b230139@nitsikkim.ac.in" class="contact-icon-link">
                                         <span class="material-icons">mail</span>
                                     </a>
 
-                                    <a href="https://linkedin.com/in/arjunmehta" target="_blank"
+                                    <a href="https://www.linkedin.com/in/tanisha-chakraborty123" target="_blank"
                                         class="contact-icon-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24">
@@ -516,10 +566,10 @@
                     linkedin: "https://www.linkedin.com/in/bittu-kumar-59b00b32b",
                 },
                 {
-                    name: "Amit Sharma",
-                    img: "./assets/images/nis.png",
-                    mail: "amit@mail.com",
-                    linkedin: "",
+                    name: "Anoop Patel",
+                    img: "./assets/images/b230123@nitsikkim.ac.in.png",
+                    mail: "b230123@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/anooppatel582",
                 },
                 {
                     name: "Gaurav Kumar",
@@ -530,21 +580,27 @@
             ],
         },
         {
-            roleTitle: "Secratary",
+            roleTitle: "Secretaries",
             members: [
                 {
                     name: "Shashi",
-                    img: "./assets/images/nis.png",
-                    mail: "varun@mail.com",
-                    linkedin: "",
+                    img: "./assets/images/b230137@nitsikkim.ac.in.png",
+                    mail: "b230137@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/shashi-2419a0271",
                 },
+                // {
+                //     name: "Satvik Choudhary",
+                //     img: "./assets/images/.png",
+                //     mail: "varun@mail.com",
+                //     linkedin: "",
+                // },
             ],
         },
         {
             roleTitle: "Joint Secretaries",
             members: [
                 {
-                    name: "Varun Sharma",
+                    name: "Yash Gupta",
                     img: "./assets/images/b230038@nitsikkim.ac.in.png",
                     mail: "b230038@nitsikkim.ac.in",
                     linkedin: "https://linkedin.com/in/intotheabyss19",
@@ -554,6 +610,35 @@
                     img: "./assets/images/b230047@nitsikkim.ac.in.png",
                     mail: "b230047@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/debopriyo-khan-1b766328a",
+                },
+                {
+                    name: "Abhishek Kumar Gond",
+                    img: "./assets/images/b230093@nitsikkim.ac.in.png",
+                    mail: "b230093@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/abhishek-kumar-gond-260694310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                },
+                {
+                    name: "Anoop Patel",
+                    img: "./assets/images/b230123@nitsikkim.ac.in.png",
+                    mail: "b230123@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/anooppatel582",
+                },
+            ],
+        },
+        {
+            roleTitle: "Convenors",
+            members: [
+                {
+                    name: "Ayush Kumar",
+                    img: "./assets/images/b230008@nitsikkim.ac.in.png",
+                    mail: "b230008@nitsikkim.ac.in",
+                    linkedin: "https://linkedin.com/in/ayush-kumar-0735a6289 ",
+                },
+                {
+                    name: "Shreyasi",
+                    img: "./assets/images/b230029@nitsikkim.ac.in.png",
+                    mail: "b230029@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/shreyasi-soumya",
                 },
             ],
         },
@@ -580,7 +665,7 @@
                     linkedin: "https://www.linkedin.com/in/anshu-kumar-98b76424a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 },
                 {
-                    name: "Shiran",
+                    name: "Shiranul Haque",
                     img: "./assets/images/b230024@nitsikkim.ac.in.png",
                     mail: "b230024@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/shiranul-haque-2697792ba",
@@ -590,15 +675,15 @@
                 { name: "Ravi Prakash Ranjan", img: "./assets/images/b230062@nitsikkim.ac.in.png", mail: "b230062@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/ravi-prakash-ranjan-8983a1324" },
                 {
                     name: "Rajesh Siddareddy",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
+                    img: "./assets/images/b230065@nitsikkim.ac.in.png",
+                    mail: "b230065@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/s-rajesh-reddy",
                 },
                 {
                     name: "Priyal Meena",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
+                    img: "./assets/images/b230132@nitsikkim.ac.in.png",
+                    mail: "b230132@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/priyal-meena-02207b298",
                 },
             ],
         },
@@ -606,26 +691,52 @@
         {
             name: "Sponsorship",
             leads: [
-                { name: "Neymit", img: "./assets/images/nis.png", mail: "", linkedin: "" },
+                { name: "Neymit Narjinary", img: "./assets/images/b230014@nitsikkim.ac.in.png", mail: "b230014@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/neymit-narjinary-499b99327?trk=contact-info" },
                 {
                     name: "Trilokjeet Basu",
                     img: "./assets/images/b230140@nitsikkim.ac.in.png",
                     mail: "b230140@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/trilokjeetbasu",
                 },
+                {
+                    name: "Neeraj Kumar Gupta",
+                    img: "./assets/images/b230015@nitsikkim.ac.in.png",
+                    mail: "b230015@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/neeraj-kumar-a67457347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                },
             ],
             associates: [
                 {
                     name: "Debopriyo Khan",
                     img: "./assets/images/b230047@nitsikkim.ac.in.png",
-                    mail: "",
-                    linkedin: "",
+                    mail: "b230047@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/debopriyo-khan-1b766328a",
                 },
+                
+            ],
+        },
+        {
+            name: "Event Management",
+            leads: [
+                { name: "Saurav", img: "./assets/images/b230032@nitsikkim.ac.in.png", mail: "b230032@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/sourav-mahato121?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
                 {
-                    name: "Neeraj Kumar Gupta",
-                    img: "./assets/images/b230015@nitsikkim.ac.in.png",
-                    mail: "b230015@nitsikkim.ac.in",
-                    linkedin: "#",
+                    name: "Vikash Singh",
+                    img: "./assets/images/b230069@nitsikkim.ac.in.png",
+                    mail: "b230069@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/vikas-singh-37377828a",
+                },
+            ],
+            associates: [
+                { name: "Akriti Patel", img: "./assets/images/b230097@nitsikkim.ac.in.png", mail: "b230097@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/akriti-patel-991684330/" },
+                { name: "Satya Ranjan Barik", img: "./assets/images/b230023@nitsikkim.ac.in.png", mail: "b230023@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/satya-ranjan-barik-7966b0317" },
+                { name: "Nehal Rai", img: "./assets/images/b230111@nitsikkim.ac.in.png", mail: "b230111@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/nehal-rai-6b8209381" },
+                { name: "Prem Kumar Shah", img: "./assets/images/b230059@nitsikkim.ac.in.png", mail: "b230059@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/prem-kumar-shah-01ba36316" },
+                { name: "Abhishek Kumar", img: "./assets/images/b230071@nitsikkim.ac.in.png", mail: "b230071@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/abhishek-kumar-a1a32a339" },
+                {
+                    name: "Hritik Gautam",
+                    img: "./assets/images/b230052@nitsikkim.ac.in.jpg.png",
+                    mail: "b230052@nitsikkim.ac.in.jpg",
+                    linkedin: "https://www.linkedin.com/in/hritik-gautam-a26008304",
                 },
             ],
         },
@@ -633,11 +744,19 @@
             name: "Graphics",
             leads: [
                 {
-                    name: "Durgaprasad Valle",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
+                    name: "Indrani Adhikary",
+                    img: "./assets/images/b230011@nitsikkim.ac.inN.png",
+                    mail: "b230011@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/indrani-adhikary-1006422b5",
                 },
+                {
+                    name: "Rishabh Kumar Gupta",
+                    img: "./assets/images/b230115@nitsikkim.ac.in.png",
+                    mail: "b230115@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/rishabh-kumar-gupta-394826311",
+                },
+            ],
+            associates: [
                 {
                     name: "Abhishek Kumar",
                     img: "./assets/images/b230121@nitsikkim.ac.in.png",
@@ -645,7 +764,6 @@
                     linkedin: "https://www.linkedin.com/in/abhishek-kumar-357994329?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4eEraQEwTfeIfRedCWUYhA%3D%3D",
                 },
             ],
-            associates: [],
         },
         {
             name: "Content",
@@ -682,12 +800,6 @@
                 },
             ],
             associates: [
-                {
-                    name: "Awantika Sharma",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
-                },
             ],
         },
         {
@@ -714,41 +826,35 @@
             name: "Merchandise",
             leads: [
                 { name: "Abhinav Kumar Jha", img: "./assets/images/b230043@nitsikkim.ac.in.png", mail: "b230043@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/abhinav-kumar-jha-9068b7379" },
-                { name: "Chombey", img: "./assets/images/nis.png", mail: "", linkedin: "" },
+                { name: "Chombey Sona", img: "./assets/images/b230102@nitsikkim.ac.in.png", mail: "b230102@nitsikkim.ac.in", linkedin: "https://linkedin.com/in/chombey-sona-16a167381" },
             ],
             associates: [
-                { name: "Teegan", img: "./assets/images/b230091@nitsikkim.ac.in.png", mail: "b230091@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/teegan-subba-561b23310" },
+            
             ],
         },
         {
             name: "Cultural",
             leads: [
-                { name: "Rohit", img: "./assets/images/b230134@nitsikkim.ac.in.png", mail: "b230134@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/rohit-kumar-singh-651b72370" },
-                { name: "Richa", img: "./assets/images/nis.png", mail: "", linkedin: "" },
+                { name: "Rohit Kumar Singh", img: "./assets/images/b230134@nitsikkim.ac.in.png", mail: "b230134@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/rohit-kumar-singh-651b72370" },
+                { name: "Richa Kumari", img: "./assets/images/b230019@nitsikkim.ac.in.png", mail: "b230019@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/richa-kumari-31832a23b" },
             ],
             associates: [
-
+                    { name: "Teegan Subba", img: "./assets/images/b230091@nitsikkim.ac.in.png", mail: "b230091@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/teegan-subba-561b23310" },
             ],
         },
         {
             name: "Hospitality & Logistics",
             leads: [
-                { name: "Aman", img: "./assets/images/b230098@nitsikkim.ac.in.png", mail: "b230098@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/amanraj-patel-70920737a" },
+                { name: "Amanraj Patel", img: "./assets/images/b230098@nitsikkim.ac.in.png", mail: "b230098@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/amanraj-patel-70920737a" },
                 {
                     name: "Shashwat Mishra",
                     img: "./assets/images/b230138@nitsikkim.ac.in.png",
                     mail: "b230138@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/shashwat-mishra-978687379",
                 },
-                { name: "Nirmal", img: "./assets/images/b230056@nitsikkim.ac.in.png", mail: "b230056@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/nirmal-kumar-chauhan-7a2b64320" },
+                { name: "Nirmal Kumar Chauhan", img: "./assets/images/b230056@nitsikkim.ac.in.png", mail: "b230056@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/nirmal-kumar-chauhan-7a2b64320" },
             ],
             associates: [
-                {
-                    name: "Shree Krishn Bhakt",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
-                },
             ],
         },
         {
@@ -756,9 +862,9 @@
             leads: [
                 {
                     name: "Piyush Bharti",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
+                    img: "./assets/images/b230016@nitsikkim.ac.in.png",
+                    mail: "b230016@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/piyush-bharti-882417365",
                 },
             ],
             associates: [
@@ -770,9 +876,9 @@
                 },
                 {
                     name: "Prashant Kumar",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
+                    img: "./assets/images/b230017@nitsikkim.ac.in.png",
+                    mail: "b230017@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/prashant-kumar-8218b9380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 },
 
             ],
@@ -780,7 +886,21 @@
         {
             name: "Photography",
             leads: [
-                { name: "Betha Jayant Veer", img: "./assets/images/nis.png", mail: "", linkedin: "" },
+                {
+                    name: "Betha Jayanth Veer",
+                    img: "./assets/images/b230044@nitsikkim.ac.in.png",
+                    mail: "b230044@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/jayanthveer-betha",
+                },
+                {
+                    name: "Annepu Gnana Prasad",
+                    img: "./assets/images/b230003@nitsikkim.ac.in.png",
+                    mail: "b230003@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/annepu-gnana-prasad-b7136528a",
+                },
+                
+            ],
+            associates: [
                 {
                     name: "Awanish Patel",
                     img: "./assets/images/b230126@nitsikkim.ac.in.png",
@@ -788,54 +908,16 @@
                     linkedin: "https://www.linkedin.com/in/awanishpatel",
                 },
             ],
-            associates: [
-                {
-                    name: "Annepu Gnana Prasad",
-                    img: "./assets/images/b230003@nitsikkim.ac.in.png",
-                    mail: "b230003@nitsikkim.ac.in",
-                    linkedin: "https://www.linkedin.com/in/annepu-gnana-prasad-b7136528a",
-                },
-            ],
         },
-        {
-            name: "Event Management",
-            leads: [
-                { name: "Saurav", img: "./assets/images/b230032@nitsikkim.ac.in.png", mail: "b230032@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/sourav-mahato121?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-                {
-                    name: "Vikash Singh",
-                    img: "./assets/images/b230069@nitsikkim.ac.in.png",
-                    mail: "b230069@nitsikkim.ac.in",
-                    linkedin: "https://www.linkedin.com/in/vikas-singh-37377828a",
-                },
-            ],
-            associates: [
-                { name: "Akriti Patel", img: "./assets/images/b230097@nitsikkim.ac.in.png", mail: "b230097@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/akriti-patel-991684330/" },
-                { name: "Satya", img: "./assets/images/nis.png", mail: "", linkedin: "" },
-                { name: "Nehal Rai", img: "./assets/images/b230111@nitsikkim.ac.in.png", mail: "b230111@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/nehal-rai-6b8209381" },
-                { name: "Prem", img: "./assets/images/b230059@nitsikkim.ac.in.png", mail: "b230059@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/prem-kumar-shah-01ba36316" },
-                { name: "Abhishek", img: "./assets/images/b230093@nitsikkim.ac.in.png", mail: "b230093@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/abhishek-kumar-gond-260694310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-                {
-                    name: "Hritik",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
-                },
-            ],
-        },
+        
         {
             name: "Discipline",
             leads: [
-                { name: "Harsh", img: "./assets/images/nis.png", mail: "", linkedin: "" },
+                { name: "Harsh Yadav", img: "./assets/images/b230106@nitsikkim.ac.in.png", mail: "b230106@nitsikkim.ac.in", linkedin: "#" },
             ],
             associates: [
-                { name: "Ankit", img: "./assets/images/b230122@nitsikkim.ac.in.png", mail: "b230122@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/ankit-bhaskar-655441307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-                {
-                    name: "Prayas Palit",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
-                },
-                { name: "Aditya", img: "./assets/images/nis.png", mail: "", linkedin: "" },
+                { name: "Ankit Bhaskar", img: "./assets/images/b230122@nitsikkim.ac.in.png", mail: "b230122@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/ankit-bhaskar-655441307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+       
             ],
         },
         {
@@ -851,9 +933,9 @@
             associates: [
                 {
                     name: "Dhiraj Kumar",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
+                    img: "./assets/images/b230103@nitsikkim.ac.in.png",
+                    mail: "b230103@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/dhiraj-kumar-62baa52b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 },
                 {
                     name: "Arijit Mondal",
@@ -868,18 +950,21 @@
             leads: [
                 {
                     name: "Ritik Kumar Paswan",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
+                    img: "./assets/images/b230082@nitsikkim.ac.in.png",
+                    mail: "b230082@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/ritik-paswan-96181527a",
                 },
             ],
             associates: [
-                {
-                    name: "Sachin Sahu",
-                    img: "./assets/images/nis.png",
-                    mail: "",
-                    linkedin: "",
-                },
+            ],
+        },
+        {
+            name: "Creative",
+            leads: [
+                { name: "Akriti Patel", img: "./assets/images/b230097@nitsikkim.ac.in.png", mail: "b230097@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/akriti-patel-991684330/" },
+                { name: "Nehal Rai", img: "./assets/images/b230111@nitsikkim.ac.in.png", mail: "b230111@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/nehal-rai-6b8209381" },
+            ],
+            associates: [
             ],
         },
     ];
@@ -901,9 +986,9 @@
             </div>
             </div>
             <div class="text-center">
-            <h3 class="text-2xl font-bold mb-1 font-luckiest-guy uppercase">${member.name}</h3>
+            <h3 class="text-2xl font-bold mb-1 font-luckiest-guy uppercase h-[50px]">${member.name}</h3>
             ${subTitle}
-            <div class="contact-icons-wrapper flex items-center justify-evenly">
+            <div class="contact-icons-wrapper flex items-center justify-evenly w-[120px]">
                 <a href="mailto:${member.mail}" class="contact-icon-link"><span class="material-icons">mail</span></a>
                 <a href="${member.linkedin}" target="_blank" class="contact-icon-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
