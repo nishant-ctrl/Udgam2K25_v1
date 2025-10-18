@@ -3,25 +3,25 @@
 $x = explode('/', $_SERVER['REQUEST_URI']);
 switch ($x[2]) {
     case '':
-        include 'src/pages/home.php';
+        include 'pages/home.php';
         break;
     case 'home':
-        include 'src/pages/home.php';
+        include 'pages/home.php';
         break;
     case 'aboutus':
-        include 'src/pages/aboutus.php';
+        include 'pages/aboutus.php';
         break;
     case 'events':
-        include 'src/pages/events.php';
+        include 'pages/events.php';
         break;
     case 'teams':
-        include 'src/pages/teams.php';
+        include 'pages/teams.php';
         break;
     case 'sponsors':
-        include 'src/pages/sponsers.php';
+        include 'pages/sponsers.php';
         break;
     case 'gallery':
-        include 'src/pages/gallery.php';
+        include 'pages/gallery.php';
         break;
     default:
         http_response_code(404);
