@@ -1,0 +1,163 @@
+/* style.css - Sponsors Page Rustic Brown Vintage Theme */
+
+/* 1. Font Definitions */
+.font-luckiest-guy {
+    font-family: 'Luckiest Guy', cursive;
+}
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* 2. Background and Structure */
+
+/* Main Title Style - Rustic Wood Grain Fill */
+#sponsors-title {
+    /* Warm vintage gold-to-brown fill */
+    background-image: linear-gradient(90deg, #cf7214, #b98d6c); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Vintage Outline + Shadow for depth */
+    text-shadow:
+        /* 1. Dark Coffee Outline for bold contrast */
+        -3px -3px 0 #9b5740,
+         3px -3px 0 #4E2A1E,
+        -3px 3px 0 #4E2A1E,
+         3px 3px 0 #4E2A1E,
+
+        /* 2. Creamy Highlight */
+        0 0 10px rgba(255, 245, 230, 0.8),
+
+        /* 3. Deep Shadow for dimensional feel */
+        6px 6px 0px rgba(30, 15, 10, 0.9);
+}
+
+/* 3. Why Sponsor Us Section Styling (The Aged Paper/Leather Panel) */
+.vintage-panel {
+    /* Light, aged background with dark border for a cracked parchment look */
+    background-color: #FFF8E7; 
+    border: 5px solid #8B4513; /* Saddle Brown Border */
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    padding: 3rem 2rem;
+    position: relative;
+    color: #4E2A1E; /* Dark brown text */
+}
+
+/* Header Text Contrast */
+.vintage-panel h2 {
+    color: #A0522D; /* Sienna/Dark Brown */
+    text-shadow: 2px 2px 0px #fff;
+}
+.vintage-panel .text-amber-100 {
+    color: #4E2A1E; /* Dark brown text for legibility on light panel */
+}
+
+/* Vintage Button (Deep Red and Gold/Brown Accents) */
+.vintage-button {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+    border: 2px solid #D4A373; /* Muted Gold/Brown accent */
+    background-color: #A0522D; /* Sienna/Deep Red-Brown */
+}
+.vintage-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+    background-color: #B95D35;
+}
+
+/* 4. Sponsor Card Styling (The Aged Wood Plaque) */
+.sponsor-card {
+    /* Darker wood effect for the card background */
+    background-color: #795548; /* Medium Brown */
+    border: 5px solid #D4A373; /* Muted Gold/Brass Frame */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    padding: 2.5rem 1.5rem;
+    position: relative;
+}
+
+.sponsor-card:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* 4. Sponsor Card Styling (The Aged Wood Plaque) */
+
+/* ... (sponsor-card and sponsor-card:hover rules remain the same) ... */
+
+.sponsor-logo {
+    /* MODIFIED: Removed border-radius (circular shape) and filter effects */
+    /* MODIFIED: Adjusted for a rectangular/square logo look */
+    /* width: 128px; w-32 from HTML */
+    /* height: 128px; h-32 from HTML */
+    
+    /* Ensure the original color is always shown */
+    filter: none; 
+    
+    /* Retaining a subtle dark border to frame the logo */
+    /* border: 2px solid #4E2A1E;  */
+    margin-top: 10px;
+    margin-bottom: 5px; /* Added some vertical separation */
+    display: block;
+}
+
+.sponsor-card:hover .sponsor-logo {
+    /* MODIFIED: Removed filter change on hover, logo stays original color */
+    filter: none; 
+}
+/* ... (Rest of the CSS remains the same) ... */
+/* Sponsor Name & Tagline */
+.sponsor-card h3 {
+    color: #FFD700; /* Gold text for names */
+    text-shadow: 1px 1px 0 #4E2A1E; /* Dark outline */
+}
+.sponsor-card p {
+    color: #FFF8E7; /* Cream text for taglines */
+    text-shadow: 1px 1px 2px #4E2A1E;
+}
+
+
+/* Tier Badges - Brass Tags */
+.tier-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-family: 'Luckiest Guy', cursive;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    white-space: nowrap;
+}
+
+.gold-tier .tier-badge {
+    background-color: #D4A373; /* Rustic Brass */
+    color: #4E2A1E; /* Dark Brown Text */
+    border-color: #FFD700;
+}
+.silver-tier .tier-badge {
+    background-color: #B0B0B0; /* Aged Silver */
+    color: #4E2A1E;
+    border-color: #E0E0E0;
+}
+.bronze-tier .tier-badge {
+    background-color: #CD7F32; /* Aged Copper/Bronze */
+    color: #FFF;
+    border-color: #FFD700;
+}
+
+/* Committee Label (Rustic Banner for Tiers Heading) */
+.committee-label {
+    /* Deep red-brown banner */
+    background: linear-gradient(90deg, #A0522D, #8B4513);
+    border: 3px solid #FFD700; /* Gold trim */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    border-radius: 8px;
+    padding: 10px 25px;
+}
+.committee-label p {
+    color: #FFD700; /* Gold text on banner */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}

@@ -1,6 +1,6 @@
 <!-- Desktop Navigation -->
 <nav class="hidden lg:flex justify-center items-start absolute -top-3 right-0 gap-2 xl:gap-3 px-4 z-40 w-full">
-    <a href="/udg2k25" class="nav-item w-36 lg:w-40 xl:w-48 flex-shrink-0 relative cursor-pointer hover-scale transition-transform duration-300 animate-swing delay-100">
+    <a href="/Udgam2K25" class="nav-item w-36 lg:w-40 xl:w-48 flex-shrink-0 relative cursor-pointer hover-scale transition-transform duration-300 animate-swing delay-100">
         <img src="./assets/images/plank.png" alt="Home" class="w-full h-auto object-contain">
         <span class="absolute inset-0 flex items-center justify-center text-sm lg:text-base font-bold text-white/80 hover:text-white/90 transition-all px-2">Home</span>
     </a>
