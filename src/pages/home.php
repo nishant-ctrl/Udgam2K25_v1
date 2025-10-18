@@ -91,7 +91,9 @@ $team_contacts = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udgam 2k25</title>
     <link rel="icon" type="image/x-icon" href="./assets/favicon/udg2k25.png">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <script src="./js/tailwind.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Rye&display=swap" rel="stylesheet">
