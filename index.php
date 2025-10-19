@@ -1,22 +1,26 @@
 <?php
-//var_dump($_SERVER['REQUEST_URI']);
-$uri = trim($_SERVER['REQUEST_URI'], '/');
-$path = include './root.php';
-// 2. Explode the URI, then filter out any empty values (which prevents issues 
-//    if there are double slashes // somewhere).
-$x = array_filter(explode('/', $uri));
-// 3. Get the last segment, which is the page slug (e.g., 'home', 'aboutus').
-//    If the array is empty (i.e., it's the root URL), $page_slug will be null/false.
-$page_slug = end($x);
+// Get and clean the URI (remove query strings)
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// 4. Handle the root URL case (when $page_slug is false or empty)
-if (!$page_slug) {
-    $page_slug = ''; // Treat the root as an empty string for the switch case
+// Automatically detect and remove base directory
+$scriptName = dirname($_SERVER['SCRIPT_NAME']);
+if ($scriptName !== '/' && strpos($uri, $scriptName) === 0) {
+    $uri = substr($uri, strlen($scriptName));
 }
+
+$uri = trim($uri, '/');
+$path = include './root.php';
+
+// Extract the last segment efficiently
+if ($uri === '') {
+    $page_slug = '';
+} else {
+    $lastSlash = strrpos($uri, '/');
+    $page_slug = $lastSlash !== false ? substr($uri, $lastSlash + 1) : $uri;
+}
+
 switch ($page_slug) {
     case '':
-        include "{$path['pages_dir']}/home.php";
-        break;
     case 'home':
         include "{$path['pages_dir']}/home.php";
         break;
@@ -36,33 +40,31 @@ switch ($page_slug) {
         include "{$path['pages_dir']}/gallery.php";
         break;
     default:
-        // echo $page_slug;
-        echo "404 Not Found";
+        http_response_code(404);
+        echo "<h1>404 - Page Not Found</h1>";
+        echo "<p>The page you are looking for does not exist.</p>";
         break;
 }
 ?>
 <script>
     addEventListener('DOMContentLoaded', () => {
-        // Scroll animations
         const leftHalf = document.getElementById('leftHalf');
         const rightHalf = document.getElementById('rightHalf');
         const mainContent = document.getElementById('mainContent');
+        const loadingText = document.getElementById('loadingText');
 
         function showNextText() {
             setTimeout(() => {
-                loadingText.style.opacity = '0';
+                if (loadingText) loadingText.style.opacity = '0';
 
                 setTimeout(() => {
-                    leftHalf.classList.add('open');
-                    rightHalf.classList.add('open');
-                    mainContent.classList.add('visible');
-
-
+                    if (leftHalf) leftHalf.classList.add('open');
+                    if (rightHalf) rightHalf.classList.add('open');
+                    if (mainContent) mainContent.classList.add('visible');
                 }, 500);
             }, 500);
         }
 
         showNextText();
-      
-    })
+    });
 </script>
