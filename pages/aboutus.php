@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us</title>
-  <link rel="icon" type="image/x-icon" href="./assets/favicon/udg2k25.png">
-  <script src="./js/tailwind.js"></script>
-  <link rel="stylesheet" href="./css/aboutus.css" />
+  <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
+  <script src="<?= $path['js_dir']?>/tailwind.js"></script>
+  <link rel="stylesheet" href="<?=$path['css_dir']?>/aboutus.css" />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -288,7 +288,7 @@
 <body class="bg-[var(--color-wood-medium)] bg-cover bg-fixed bg-center"
   style="background-image: url('./assets/images/abg.png');">
 <div class="main-content-wrapper" id="mainContent">
-  <?php include 'header.php'?>
+  <?php include "{$path['pages_dir']}/header.php" ?>
   <section
     class="hero relative min-h-screen flex flex-col justify-center items-center text-center bg-cover bg-center px-4 sm:px-6 md:px-10">
     <div class="absolute inset-0 bg-overlay"></div>

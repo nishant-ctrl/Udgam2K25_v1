@@ -2,52 +2,52 @@
 $records = [
     [
         'year' => 'Udgam 2k25',
-        'path' => './assets/logos/logo2k25.png',
+        'path' => '/logo2k25.png',
         'url' => '#',
     ],
     [
         'year' => 'Udgam 2k24',
-        'path' => './assets/logos/logo2k24.jpg',
+        'path' => '/logo2k24.jpg',
         'url' => 'https://udgam.nitsikkim.ac.in/udgam24/',
     ],
     [
         'year' => 'Udgam 2k23',
-        'path' => './assets/logos/logo2k23.jpg',
+        'path' => '/logo2k23.jpg',
         'url' => 'https://nitsikkim.ac.in/udgam/udgam23/home.php',
     ],
     [
         'year' => 'Udgam 2k20',
-        'path' => './assets/logos/logo2k18_19.jpg',
+        'path' => '/logo2k18_19.jpg',
         'url' => 'https://nitsikkim.ac.in/udgam/udgam20/',
     ],
     [
         'year' => 'Udgam 2k19',
-        'path' => './assets/logos/logo2k18_19.jpg',
+        'path' => '/logo2k18_19.jpg',
         'url' => 'https://udgam.nitsikkim.ac.in/udgam19/',
     ],
     [
         'year' => 'Udgam 2k18',
-        'path' => './assets/logos/logo2k18_19.jpg',
+        'path' => '/logo2k18_19.jpg',
         'url' => 'https://udgam.nitsikkim.ac.in/udgam18/HIGH%20VOLTAGE/H_V.php#contact',
     ],
     [
         'year' => 'Udgam 2k17',
-        'path' => './assets/logos/logo2k17.jpg',
+        'path' => '/logo2k17.jpg',
         'url' => '#',
     ],
     [
         'year' => 'Udgam 2k16',
-        'path' => './assets/logos/logo2k16.jpg',
+        'path' => '/logo2k16.jpg',
         'url' => '#',
     ],
     [
         'year' => 'Udgam 2k15',
-        'path' => './assets/logos/logo2k15.jpg',
+        'path' => '/logo2k15.jpg',
         'url' => '#',
     ],
     [
         'year' => 'Udgam 2k14',
-        'path' => './assets/logos/logo2k14.jpg',
+        'path' => '/logo2k14.jpg',
         'url' => '#',
     ],
 ];
@@ -58,7 +58,7 @@ $team_contacts = [
         'position' => 'President',
         'phone' => '+91 91238 34091',
         'email' => 'b230073@nitsikkim.ac.in',
-        'pic' => './assets/images/ayan.jpeg',
+        'pic' => '/ayan.jpeg',
         'linkedin' => '#',
         'instagram' => '#'
     ],
@@ -67,7 +67,7 @@ $team_contacts = [
         'position' => 'Vice President',
         'phone' => '+91 76791 79646',
         'email' => 'b230011@nitsikkim.ac.in',
-        'pic' => './assets/images/indrani.jpeg',
+        'pic' => '/indrani.jpeg',
         'linkedin' => 'https://www.linkedin.com/in/indrani-adhikary-1006422b5',
         'instagram' => 'https://www.instagram.com/ind_028?igsh=MWp5djNyb3B3dXRlcQ=='
     ],
@@ -76,7 +76,7 @@ $team_contacts = [
         'position' => 'General Secretary',
         'phone' => '+91 96497 34621',
         'email' => 'b230120@nitsikkim.ac.in',
-        'pic' => './assets/images/ayush.jpeg',
+        'pic' => '/ayush.jpeg',
         'linkedin' => 'https://www.linkedin.com/in/aayush-choudhary-86848835a',
         'instagram' => 'https://www.instagram.com/spyrant?igsh=MTRvcDF5anZxcWhkdQ=='
     ],
@@ -85,7 +85,7 @@ $team_contacts = [
         'position' => 'Treasurer',
         'phone' => '+91 85430 30340',
         'email' => 'b230082@nitsikkim.ac.in',
-        'pic' => './assets/images/ritik.jpeg',
+        'pic' => '/ritik.jpeg',
         'linkedin' => 'https://www.linkedin.com/in/ritik-paswan-96181527a',
         'instagram' => 'https://www.instagram.com/ritikkumarpaswan17?igsh=MXgwYjdiMnE4cDd3Yw=='
     ]
@@ -98,19 +98,20 @@ $team_contacts = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udgam 2k25</title>
-    <link rel="icon" type="image/x-icon" href="./assets/favicon/udg2k25.png">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
-    <script src="./js/tailwind.js"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Rye&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
+  <script src="<?= $path['js_dir']?>/tailwind.js"></script>
+  <link rel="stylesheet" href="<?=$path['css_dir']?>/style.css" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Rye&display=swap" rel="stylesheet">
 </head>
-<link rel="stylesheet" href="./css/universalStyle.css">
+<link rel="stylesheet" href="<?=$path['css_dir']?>/universalStyle.css" />
+<!-- <link rel="stylesheet" href="./css/universalStyle.css"> -->
 <body class="overflow-x-hidden">
-    <?php include 'counter.php' ?>
-    <?php include 'doors.php' ?>
+    <?php include "{$path['pages_dir']}/counter.php" ?>
+    <?php include "{$path['pages_dir']}/doors.php" ?>
     <div class="main-content-wrapper" id="mainContent">
         <div class="w-screen flex flex-col smooth-scroll overflow-x-hidden">
 
@@ -230,7 +231,7 @@ $team_contacts = [
                                             </div>
 
                                             <!-- Logo Image -->
-                                            <img src="<?php echo $record['path']; ?>"
+                                            <img src="<?php echo "{$path['logos_dir']}{$record['path']}"; ?>"
                                                 alt="<?php echo $record['year']; ?>"
                                                 class="w-full h-full object-cover rounded-full transform transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-3 relative z-10">
                                         </div>
@@ -416,7 +417,7 @@ $team_contacts = [
             </div>
 
             <!-- Contact Section -->
-            <div id="team" style="background-image: url(./assets/images/bg3.png);" class="relative w-full min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+            <div id="team" style="background-image: url(<?= $path['img_dir']?>/bg3.png);" class="relative w-full min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
                 <div class="bg-amber-900 p-4 sm:p-6 md:p-8 rounded-3xl shadow-2xl max-w-5xl w-full scroll-animate hover-lift">
                     <!-- Frame Header -->
                     <div class="bg-gradient-to-b from-amber-200 to-amber-300 p-4 sm:p-6 text-center rounded-t-2xl border-4 sm:border-8 border-amber-950 relative">
@@ -443,7 +444,7 @@ $team_contacts = [
                                         <!-- Photo Container -->
                                         <div class="flex justify-center mb-3">
                                             <div class="w-32 h-40 sm:w-40 sm:h-48 md:w-50 md:h-60 bg-[#FFFBEB] overflow-hidden border-4 border-amber-900 shadow-lg hover-glow">
-                                                <img src="<?php echo $contact['pic']; ?>" alt="<?php echo $contact['name']; ?>" class="w-full h-full object-cover">
+                                                <img src="<?php echo "{$path['img_dir']}{$contact['pic']}"; ?>" alt="<?php echo $contact['name']; ?>" class="w-full h-full object-cover">
                                             </div>
                                         </div>
 

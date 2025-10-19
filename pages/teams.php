@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fest Committees</title>
-    <script src="./js/tailwind.js"></script>
-    <link rel="stylesheet" href="./css/teams.css">
+    <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
+  <script src="<?= $path['js_dir']?>/tailwind.js"></script>
+  <link rel="stylesheet" href="<?=$path['css_dir']?>/teams.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet">
@@ -128,7 +129,7 @@
 
 
     <div class="container mx-auto px-4 py-16 text-white relative z-10 carnival-content-frame">
-  <?php include 'header.php'?>
+    <?php include "{$path['pages_dir']}/header.php" ?>
         <header class="text-center mb-16 mt-16">
             <div class="flex flex-col items-center mb-16 relative px-4 sm:px-6 md:px-0">
                 <!-- Vintage Divider with Animation -->

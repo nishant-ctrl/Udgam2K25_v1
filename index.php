@@ -1,30 +1,42 @@
 <?php
 //var_dump($_SERVER['REQUEST_URI']);
-$x = explode('/', $_SERVER['REQUEST_URI']);
-switch ($x[2]) {
+$uri = trim($_SERVER['REQUEST_URI'], '/');
+$path = include './root.php';
+// 2. Explode the URI, then filter out any empty values (which prevents issues 
+//    if there are double slashes // somewhere).
+$x = array_filter(explode('/', $uri));
+// 3. Get the last segment, which is the page slug (e.g., 'home', 'aboutus').
+//    If the array is empty (i.e., it's the root URL), $page_slug will be null/false.
+$page_slug = end($x);
+
+// 4. Handle the root URL case (when $page_slug is false or empty)
+if (!$page_slug) {
+    $page_slug = ''; // Treat the root as an empty string for the switch case
+}
+switch ($page_slug) {
     case '':
-        include 'pages/home.php';
+        include "{$path['pages_dir']}/home.php";
         break;
     case 'home':
-        include 'pages/home.php';
+        include "{$path['pages_dir']}/home.php";
         break;
     case 'aboutus':
-        include 'pages/aboutus.php';
+        include "{$path['pages_dir']}/aboutus.php";
         break;
     case 'events':
-        include 'pages/events.php';
+        include "{$path['pages_dir']}/events.php";
         break;
     case 'teams':
-        include 'pages/teams.php';
+        include "{$path['pages_dir']}/teams.php";
         break;
     case 'sponsors':
-        include 'pages/sponsers.php';
+        include "{$path['pages_dir']}/sponsors.php";
         break;
     case 'gallery':
-        include 'pages/gallery.php';
+        include "{$path['pages_dir']}/gallery.php";
         break;
     default:
-        http_response_code(404);
+        // echo $page_slug;
         echo "404 Not Found";
         break;
 }

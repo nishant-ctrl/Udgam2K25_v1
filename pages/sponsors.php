@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sponsors | Fest 2025</title>
-  <script src="./js/tailwind.js"></script>
+  <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
+  <script src="<?= $path['js_dir']?>/tailwind.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;700&display=swap"
     rel="stylesheet">
 
@@ -125,7 +126,7 @@
 </head>
 
 <body class="bg-sponsors-page min-h-screen relative">
-  <?php include 'header.php'?>
+  <?php include "{$path['pages_dir']}/header.php" ?>
 
   <div class="container mx-auto px-4 py-16 relative z-10">
 

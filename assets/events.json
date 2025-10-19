@@ -1,0 +1,30 @@
+{
+  "Day 0": [
+    
+  ],
+  "Day 1": [
+   
+  ],
+  "Day 2": [
+   
+  ],
+  "Day 3": [
+    
+  ],
+  "Extra": [
+    {
+      "event_name": "Short Movie Competition",
+      "event_image": "assets/images/extra2.jpg",
+      "event_deadline": "1st November 2025",
+      "event_registration_link": "https://docs.google.com/forms/d/e/1FAIpQLSfl5XJnSdnaTD7cc4nu8-XZ-NGG0AILgrt_IwPTFHgOisKeIw/viewform?usp=sharing&ouid=108369559826362231923",
+      "event_rulebook": "https://example.com/rulebook.pdf"
+    },
+    {
+      "event_name": "Photography Competition",
+      "event_image": "assets/images/extra1.jpg",
+      "event_deadline": "31st October 2025",
+      "event_registration_link": "https://docs.google.com/forms/d/e/1FAIpQLSfl5XJnSdnaTD7cc4nu8-XZ-NGG0AILgrt_IwPTFHgOisKeIw/viewform?usp=sharing&ouid=108369559826362231923",
+      "event_rulebook": "https://example.com/rulebook.pdf"
+    }
+  ]
+}
