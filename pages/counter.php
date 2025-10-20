@@ -1,5 +1,5 @@
 <div class="w-screen flex justify-center z-50">
-    <div class="fixed bottom-0 z-40 m-3 text-white rounded-xl flex flex-col justify-center items-center px-3 py-2">
+    <div class="fixed bottom-0 z-40 m-3 bg-[#8b4513] text-white rounded-xl flex flex-col justify-center items-center px-3 py-2">
         <p id='cs' class="text-white font-bold text-sm sm:text-base lg:text-lg mb-2 text-center drop-shadow-lg"></p>
         <div style="color: #6b3410;" id="countdown" class="hidden flex-wrap justify-center text-center font-bold bg-white rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-2xl border-2 border-amber-700">
             <div class="flex flex-col mx-1 sm:mx-2 countdown-digit">

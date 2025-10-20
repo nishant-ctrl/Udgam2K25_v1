@@ -131,7 +131,7 @@ $team_contacts = [
                             style="text-shadow: 2px 2px 0px #8b4513, 4px 4px 10px rgba(0,0,0,0.5); font-family: 'Georgia', serif; letter-spacing: 0.08em;">
                             2025
                         </h1>
-                        <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold text-amber-50 mt-3 sm:mt-2 md:mt-3 italic"
+                        <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold bg-[#8b4513] rounded-3xl py-1 text-amber-50 mt-3 sm:mt-2 md:mt-3 italic"
                             style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-family: 'Georgia', serif;">
                             Ascending to new horizon
                         </p>
@@ -483,7 +483,7 @@ $team_contacts = [
 
             <!-- Footer -->
             <div style="background-image: url(./assets/images/bg3.png);" class="relative w-full bg-center p-4 sm:p-6 lg:p-8 z-10">
-                <div class="flex flex-col sm:flex-row justify-around items-center w-full max-w-7xl mx-auto bg-vintage-light p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-vintage shadow-vintage text-center scroll-animate hover-lift">
+                <div class="mb-16 flex flex-col sm:flex-row justify-around items-center w-full max-w-7xl mx-auto bg-vintage-light p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-vintage shadow-vintage text-center scroll-animate hover-lift">
                     <img src="./assets/images/ferris.png" alt="Ferris Wheel" class="w-24 sm:w-32 md:w-40 lg:w-48 hidden sm:block animate-float">
                     <div class="my-4 sm:my-0">
                         <p class="text-xl sm:text-2xl lg:text-3xl font-bold text-vintage-brown mb-2">UDGAM 2025</p>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events | Udgam</title>
+  <title>Udgam 2025 | Events</title>
   <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
   <script src="<?= $path['js_dir']?>/tailwind.js"></script>
   <link rel="stylesheet" href="<?=$path['css_dir']?>/sponsors.css" />
@@ -51,7 +51,9 @@
       height: 100%;
       opacity: 0.9;
       animation: frontFerrisRotate 45s linear infinite;
-      transform-origin: 200px 200px; /* Origin remains 200, 200 based on SVG viewBox */
+      /* --- FIX APPLIED HERE --- */
+      transform-origin: 50% 50%; /* Changed from 200px 200px to 50% 50% for correct scaling rotation */
+      /* ------------------------- */
     }
 
     .fixed-ferris-support-svg {
@@ -63,7 +65,6 @@
       z-index: 4;
       opacity: 0.9;
     }
-
     /* -------------------------------------------------------------------------- */
     /* --- MAIN CONTENT (MODIFIED FOR RESPONSIVENESS) --- */
     /* -------------------------------------------------------------------------- */
@@ -79,6 +80,127 @@
         /* Default padding-right for desktop/large screen to avoid Ferris wheel */
         padding-right: 480px; /* 400px width + 50px right margin + 30px extra buffer */
     }
+
+
+    /* -------------------------------------------------------------------------- */
+    /* --- Header (MODIFIED FOR RESPONSIVENESS) --- */
+    /* -------------------------------------------------------------------------- */
+    /* --- Font Imports --- */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Bangers&family=Cinzel:wght@400;700&display=swap');
+
+.font-carnival-poster {
+    font-family: 'Bangers', cursive; /* Comic-book style, great for bold headlines */
+    /* Alternative: 'Luckiest Guy' if Bangers is too comic, or 'Passion One' */
+}
+.font-cinzel {
+    font-family: 'Cinzel', serif; /* Elegant, classic serif for subtitles */
+}
+
+/* --- Header Styling with Background Integration --- */+
+.header-with-bg-image {
+    /* The provided image will be set as the background of a parent container
+       or directly on this header, depending on your layout.
+       For this example, assume it's set on this header's container.
+       The CSS below styles the *text* to complement it. */
+    background: transparent; /* Assuming the image is handled by a parent or element above */
+    padding-top: 50px; /* Adjust as needed based on where text should sit on image */
+    padding-bottom: 50px;
+    /* You might want to add a semi-transparent overlay *over* the image if text readability is an issue */
+    /* background-color: rgba(0, 0, 0, 0.2); */
+}
+
+/* --- Vintage Carnival Title (H1) --- */
+.vintage-carnival-title {
+    color: #ffcc00; /* Bright carnival yellow/gold */
+    text-shadow:
+        -3px -3px 0 #8B0000,   /* Dark Red outline */
+         3px -3px 0 #8B0000,
+        -3px  3px 0 #8B0000,
+         3px  3px 0 #8B0000,
+        -6px -6px 0 #d4af37,   /* Deep Gold secondary outline */
+         6px -6px 0 #d4af37,
+        -6px  6px 0 #d4af37,
+         6px  6px 0 #d4af37,
+        10px 10px 15px rgba(0,0,0,0.8); /* Strong drop shadow for depth */
+    letter-spacing: 0.18em; /* Very wide spacing for a grand feel */
+    line-height: 1; /* Keep lines tight */
+    /* Add a subtle animation to make it feel like an old marquee sign */
+    animation: marquee-pulse 2.5s infinite alternate ease-in-out;
+    -webkit-text-stroke: 1.5px #A0522D; /* A subtle stroke for carved look */
+}
+
+@keyframes marquee-pulse {
+    0% {
+        transform: scale(1);
+        text-shadow:
+            -3px -3px 0 #8B0000, 3px -3px 0 #8B0000, -3px 3px 0 #8B0000, 3px 3px 0 #8B0000,
+            -6px -6px 0 #d4af37, 6px -6px 0 #d4af37, -6px 6px 0 #d4af37, 6px 6px 0 #d4af37,
+            10px 10px 15px rgba(0,0,0,0.8);
+        color: #ffcc00;
+    }
+    50% {
+        transform: scale(1.01); /* Very subtle growth */
+        text-shadow:
+            -3px -3px 0 #8B0000, 3px -3px 0 #8B0000, -3px 3px 0 #8B0000, 3px 3px 0 #8B0000,
+            -7px -7px 0 #ffd700, 7px -7px 0 #ffd700, -7px 7px 0 #ffd700, 7px 7px 0 #ffd700, /* Gold outline brighter */
+            12px 12px 20px rgba(0,0,0,0.9); /* Shadow becomes more pronounced */
+        color: #ffe65a; /* Slightly brighter yellow */
+    }
+    100% {
+        transform: scale(1);
+        text-shadow:
+            -3px -3px 0 #8B0000, 3px -3px 0 #8B0000, -3px 3px 0 #8B0000, 3px 3px 0 #8B0000,
+            -6px -6px 0 #d4af37, 6px -6px 0 #d4af37, -6px 6px 0 #d4af37, 6px 6px 0 #d4af37,
+            10px 10px 15px rgba(0,0,0,0.8);
+        color: #ffcc00;
+    }
+}
+
+/* --- Vintage Carnival Subtitle (P) --- */
+.vintage-carnival-subtitle {
+    color: #FDF5E6; /* Creamy white for contrast */
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.7), 1px 1px 0 #8B0000; /* Strong shadow + red outline */
+    letter-spacing: 0.1em; /* More spacing for elegance */
+    line-height: 1.4; /* Better readability */
+    font-weight: 700; /* Bold for impact */
+    font-style: italic; /* Classic touch */
+    /* Subtle animation for the subtitle to match the vintage feel */
+    animation: text-wobble 4s infinite ease-in-out alternate;
+}
+
+@keyframes text-wobble {
+    0%, 100% {
+        transform: translateY(0) rotateZ(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-2px) rotateZ(0.2deg); /* Very slight wobble/lift */
+        opacity: 0.98; /* Subtle dim */
+    }
+}
+
+/* --- General Styling (Adjust based on your actual page layout) --- */
+body {
+    background-color: #333; /* Dark neutral if image doesn't cover whole body */
+    margin: 0;
+    padding: 0;
+}
+/* This is important: ensure your header's parent or the header itself is set to use the image */
+/* Example: if you wrap your header in a div with id="main-header-container" */
+#main-header-container {
+    background-image: url('your-background-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Set a min-height to ensure the background image is visible */
+    min-height: 400px; /* Adjust as needed */
+    display: flex; /* For centering content vertically if needed */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
     /* -------------------------------------------------------------------------- */
     /* --- MEDIA QUERIES FOR RESPONSIVENESS --- */
@@ -417,15 +539,20 @@
   <?php include "{$path['pages_dir']}/header.php" ?>
   <div class="main-content">
     <div class="container mx-auto px-4 relative z-10">
-      <header class="text-center mb-16 mt-16">
-        <h1 id="sponsors-title"
-          class="text-7xl font-extrabold pb-4 font-luckiest-guy uppercase tracking-wide">
-          Our Exciting Events
-        </h1>
-        <p class="text-xl text-amber-50 mb-10 font-open-sans">
-          Step right up! Explore the vibrant lineup of cultural and technical events we have in store for you this year!
-        </p>
-      </header>
+   <header class="text-center mb-16 mt-16 relative header-with-bg-image">
+    <h1 id="sponsors-title"
+        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold pb-4 uppercase tracking-widest
+              relative z-20 font-carnival-poster
+              bg-gradient-to-r from-red-600 via-yellow-400 to-amber-300 text-transparent bg-clip-text
+              drop-shadow-[0_0_20px_rgba(120,60,10,0.7)] leading-tight">
+        Our Exciting Events
+    </h1>
+    <p class="text-xl bg-[#795548] rounded-xl py-1 sm:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed
+              tracking-wide relative z-20 vintage-carnival-subtitle font-cinzel
+              text-amber-100 drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]">
+        Step right up! Explore the vibrant lineup of cultural and technical events we have in store for you this year!
+    </p>
+</header>
 
       <div class="event-selection-area">
         <div class="wooden-sign-container flex justify-center items-center">

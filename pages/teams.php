@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fest Committees</title>
+    <title>Udgam 2025 Committees</title>
     <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
   <script src="<?= $path['js_dir']?>/tailwind.js"></script>
   <link rel="stylesheet" href="<?=$path['css_dir']?>/teams.css" />
@@ -141,9 +141,12 @@
                 </div>
 
                 <!-- Fest Title -->
-                <h1 id="fest-title" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold pb-4 font-luckiest-guy uppercase tracking-wide sm:tracking-wider md:tracking-widest vintage-text animate-fade-in text-center">
-                    Our Fest Committees
+                <h1 id="fest-title"
+                    class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold pb-4 font-luckiest-guy uppercase tracking-wide sm:tracking-wider md:tracking-widest text-center
+                        text-amber-200 drop-shadow-[0_0_4px_rgba(255,200,100,0.4)] sm:drop-shadow-[0_0_8px_rgba(255,190,80,0.5)] md:drop-shadow-[0_0_12px_rgba(255,180,60,0.6)] lg:drop-shadow-[0_0_18px_rgba(255,160,40,0.7)]">
+                Our Fest Committees
                 </h1>
+
 
                 <!-- Fest Description -->
                 <p class="text-base sm:text-lg md:text-xl lg:text-lg mb-10 font-open-sans text-[#4E2A1E] tracking-wide drop-shadow-[1px_1px_2px_rgba(30,15,10,0.4)] vintage-text animate-slide-up text-center max-w-xl sm:max-w-2xl md:max-w-3xl">
@@ -719,7 +722,7 @@
         {
             name: "Event Management",
             leads: [
-                { name: "Saurav", img: "./assets/images/b230032@nitsikkim.ac.in.png", mail: "b230032@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/sourav-mahato121?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+                { name: "Sourav Mahato", img: "./assets/images/b230032@nitsikkim.ac.in.png", mail: "b230032@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/sourav-mahato121?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
                 {
                     name: "Vikash Singh",
                     img: "./assets/images/b230069@nitsikkim.ac.in.png",
@@ -894,20 +897,21 @@
                     linkedin: "https://www.linkedin.com/in/jayanthveer-betha",
                 },
                 {
+                    name: "Awanish Patel",
+                    img: "./assets/images/b230126@nitsikkim.ac.in.png",
+                    mail: "b230126@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/awanishpatel",
+                },
+            ],
+            associates: [
+                
+                {
                     name: "Annepu Gnana Prasad",
                     img: "./assets/images/b230003@nitsikkim.ac.in.png",
                     mail: "b230003@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/annepu-gnana-prasad-b7136528a",
                 },
                 
-            ],
-            associates: [
-                {
-                    name: "Awanish Patel",
-                    img: "./assets/images/b230126@nitsikkim.ac.in.png",
-                    mail: "b230126@nitsikkim.ac.in",
-                    linkedin: "https://www.linkedin.com/in/awanishpatel",
-                },
             ],
         },
         
