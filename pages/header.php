@@ -39,7 +39,9 @@
 </div>
 
 <!-- Mobile Menu -->
-<div style="background-image: url(./assets/images/leftLoad.png);" id="mobileMenu" class="min-[900px]:hidden fixed inset-y-0 right-0 z-40 w-full sm:w-80 bg-[#C9AA7E] transform translate-x-full transition-transform duration-300 ease-in-out rounded-l-3xl shadow-2xl overflow-y-auto">
+    <div style="background-image: url(./assets/images/leftLoad.png);" id="mobileMenu"
+    class="lg:hidden fixed inset-y-0 right-0 z-40 w-full sm:w-80 bg-[#C9AA7E] transform translate-x-full transition-transform duration-300 ease-in-out rounded-l-3xl shadow-2xl overflow-y-auto">
+
     <!-- Logo Section -->
     <div class="flex items-center justify-center pt-6 pb-4 border-b border-amber-700/30">
         <img src="./assets/logos/logo2k25.png" alt="Logo" class="h-20 sm:h-24 w-auto animate-float">

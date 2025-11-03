@@ -244,7 +244,7 @@
           <?php 
             $card_data = [
               ['id' => 'Flashmob', 'title' => 'Flashmob' ,'path'=>'./assets/images/flash7.jpg'],
-              ['id' => 'dance', 'title' => 'Dance','path'=>'./assets/images/dance.png'],
+              ['id' => 'dance', 'title' => 'Dance','path'=>'./assets/images/Dance.png'],
               ['id' => 'music', 'title' => 'Music Performances','path'=>'./assets/images/music.png'],
               ['id' => 'art', 'title' => 'Art & Culture','path'=>'./assets/images/art.png'],
               // ['id' => 'ShowStopper', 'title' => 'ShowStopper','path'=>'./assets/images/flash7.jpg'],
