@@ -82,6 +82,14 @@
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       backdrop-filter: blur(5px);
       animation: float 6s ease-in-out infinite;
+
+      /* ✅ Fixed uniform size */
+      width: 18rem;           /* Same width for all */
+      height: 21rem;          /* Same height for all */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .sponsor-card:hover {
@@ -170,26 +178,36 @@
           <div class="section-label">Our Sponsers</div>
           <div class="flex flex-wrap justify-center gap-10 mt-6">
 
-            <div class="sponsor-card p-8 w-72">
+            <a href="https://www.canarabank.bank.in">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/canaraLogo.avif" alt="Canara Bank" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">Canara Bank</h3>
             </div>
-            <div class="sponsor-card p-8 w-72">
+            </a>
+            <a href="https://www.unionbankofindia.bank.in/en/home">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/unionLogo.jpg" alt="Union Bank" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">Union Bank of India</h3>
             </div>
-            <div class="sponsor-card p-8 w-72">
+            </a>
+            <a href="https://nbccindia.in">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/nbccLogo.png" alt="Union Bank" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">NBCC</h3>
             </div>
-            <div class="sponsor-card p-8 w-72">
+            </a>
+            <a href="https://cisb.co.in">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/cisbLogo.png" alt="Union Bank" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">CISB</h3>
             </div>
-            <div class="sponsor-card p-8 w-72">
+            </a>
+            <a href="https://www.coca-cola.com/in/en">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/cocaColaLogo.png" alt="Coca Cola" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">Coca-Cola</h3>
             </div>
+            </a>
           </div>
         </div>
 
@@ -197,10 +215,12 @@
         <div class="text-center">
           <div class="section-label">Racing Partner</div>
           <div class="flex flex-wrap justify-center gap-10 mt-6">
-            <div class="sponsor-card p-8 w-72 text-center">
+            <a href="https://www.ktmindia.com">
+              <div class="sponsor-card p-8 w-72 text-center">
               <img src="./assets/images/ktmLogo.png" alt="KTM Logo" class="sponsor-logo">
               <h3 class="text-3xl font-bold text-amber-200 mb-2">KTM</h3>
             </div>
+            </a>
           </div>
         </div>
 
@@ -208,11 +228,13 @@
         <div class="text-center">
           <div class="section-label">Food Partner</div>
           <div class="flex flex-wrap justify-center gap-10 mt-6">
-          <div class="sponsor-card p-8 w-72">
-            <img src="./assets/images/twinSpringsLogo.png" alt="Twin Springs" class="sponsor-logo">
-            <h3 class="text-2xl font-semibold text-amber-200">Twin Spring</h3>
-
-          </div>
+            <a href="https://www.facebook.com/people/Hotel-Twin-Spring-Gangtok/61565147977136/#">
+              <div class="sponsor-card p-8 w-72">
+                <img src="./assets/images/twinSpringsLogo.png" alt="Twin Springs" class="sponsor-logo">
+                <h3 class="text-2xl font-semibold text-amber-200">Twin Spring</h3>
+    
+              </div>
+            </a>
           </div>
         </div>
 
@@ -224,21 +246,26 @@
         <div class="text-center">
           <div class="section-label">Hospitality Partners</div>
           <div class="flex flex-wrap justify-center gap-10 mt-6">
-            <div class="sponsor-card p-8 w-72">
+            <a href="https://www.facebook.com/ravongla">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/ravanglaStarLogo.jpeg" alt="Hotel Ravangla Star" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">Hotel Ravangla Star</h3>
-              
             </div>
-            <div class="sponsor-card p-8 w-72">
+            </a>
+            <a href="https://hotelbuddhaparkravangla.com/home.html">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/buddhaResidencyLogo.png" alt="Buddha Residency" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">Buddha Residency</h3>
               
             </div>
-            <div class="sponsor-card p-8 w-72">
+            </a>
+            <a href="https://www.facebook.com/thealnus.ravangla">
+              <div class="sponsor-card p-8 w-72">
               <img src="./assets/images/alnusRavanglaLogo.png" alt="The Alnus Ravangla" class="sponsor-logo">
               <h3 class="text-2xl font-semibold text-amber-200">The Alnus Ravangla</h3>
               
             </div>
+            </a>
           </div>
         </div>
       </section>
