@@ -46,25 +46,3 @@ switch ($page_slug) {
         break;
 }
 ?>
-<script>
-    addEventListener('DOMContentLoaded', () => {
-        const leftHalf = document.getElementById('leftHalf');
-        const rightHalf = document.getElementById('rightHalf');
-        const mainContent = document.getElementById('mainContent');
-        const loadingText = document.getElementById('loadingText');
-
-        function showNextText() {
-            setTimeout(() => {
-                if (loadingText) loadingText.style.opacity = '0';
-
-                setTimeout(() => {
-                    if (leftHalf) leftHalf.classList.add('open');
-                    if (rightHalf) rightHalf.classList.add('open');
-                    if (mainContent) mainContent.classList.add('visible');
-                }, 500);
-            }, 500);
-        }
-
-        showNextText();
-    });
-</script>

@@ -4,13 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Udgam 2025 | Sponsors</title>
-  <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
-  <script src="<?= $path['js_dir']?>/tailwind.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Sponsors</title>
+  <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir'] ?>/udg2k25.png">
+  <script src="<?= $path['js_dir'] ?>/tailwind.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
 
   <style>
-    /* Background styling */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
     body.bg-sponsors-page {
       background-image: url('./assets/images/sponsersBg.png');
       background-size: cover;
@@ -19,16 +23,44 @@
       background-attachment: fixed;
       background-color: #3e261a;
       overflow-x: hidden;
+      color: #f8e9c4;
+      font-family: 'Open Sans', sans-serif;
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
 
     @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glowPulse {
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.6));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 20px rgba(255, 180, 50, 1));
+      }
     }
 
     .fade-in-up {
@@ -37,135 +69,188 @@
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-
-    .vintage-button {
-      background: linear-gradient(90deg, #8b0000, #ff4500);
-      box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
-      transition: all 0.3s ease;
-    }
-
-    .vintage-button:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 30px rgba(255, 200, 0, 0.9);
-    }
-
-    .vintage-panel {
-      background: rgba(30, 15, 10, 0.75);
-      border: 4px solid rgba(255, 215, 0, 0.7);
-      border-radius: 1.5rem;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-      animation: float 4s ease-in-out infinite;
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .sponsor-card {
-      background: rgba(255, 250, 230, 0.15);
-      border: 3px solid rgba(255, 215, 0, 0.5);
-      border-radius: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(40, 25, 10, 0.85);
+      border: 2.5px solid rgba(255, 215, 0, 0.6);
+      border-radius: 1.75rem;
+      box-shadow: 0 0 25px rgba(255, 190, 70, 0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      backdrop-filter: blur(5px);
       animation: float 6s ease-in-out infinite;
     }
 
     .sponsor-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(255, 200, 0, 0.8);
-    }
-
-    @keyframes glowText {
-      0%, 100% { text-shadow: 0 0 10px #ffb300, 0 0 20px #ff4500; }
-      50% { text-shadow: 0 0 20px #ff6600, 0 0 40px #ff0000; }
+      transform: scale(1.07);
+      box-shadow: 0 0 50px rgba(255, 230, 140, 0.9);
     }
 
     #sponsors-title {
-      animation: glowText 3s ease-in-out infinite alternate;
+      animation: glowPulse 3s ease-in-out infinite;
       color: #ffe28a;
     }
 
     .gallery-title {
       font-family: "Georgia", serif;
       letter-spacing: 2px;
-      text-shadow: 2px 2px 6px rgba(120, 60, 10, 0.4);
     }
 
-    @keyframes glowPulse {
-      0%, 100% { filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.6)); }
-      50% { filter: drop-shadow(0 0 20px rgba(255, 180, 50, 1)); }
+    .section-label {
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #ffcc66;
+      border-radius: 1rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      color: #ffd77a;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 8px rgba(255, 200, 100, 0.8);
+      animation: float 5s ease-in-out infinite;
     }
 
-    #sponsors-title {
-      animation: glowPulse 3s ease-in-out infinite;
+    .sponsor-logo {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 1rem;
+      filter: drop-shadow(0 0 10px rgba(255, 180, 60, 0.7));
+      transition: transform 0.3s ease;
+    }
+
+    .sponsor-logo:hover {
+      transform: scale(1.1);
+    }
+
+    .benefits-section {
+      background: rgba(20, 10, 5, 0.8);
+      border: 3px solid rgba(255, 215, 0, 0.6);
+      border-radius: 1.5rem;
+      box-shadow: 0 0 30px rgba(255, 180, 50, 0.5);
+      padding: 2rem;
+      backdrop-filter: blur(6px);
+      animation: float 5s ease-in-out infinite;
     }
   </style>
 </head>
+<link rel="stylesheet" href="<?= $path['css_dir'] ?>/universalStyle.css" />
 
 <body class="bg-sponsors-page min-h-screen relative">
   <?php include "{$path['pages_dir']}/header.php" ?>
+  <?php include "{$path['pages_dir']}/doors.php" ?>
 
-  <div class="container mx-auto px-3 sm:px-6 md:px-10 py-10 sm:py-16 relative z-10">
+  <div class="main-content-wrapper" id="mainContent">
+    <div class="container mx-auto px-4 sm:px-6 md:px-10 py-10 sm:py-16 relative z-10">
 
-    <!-- HEADER -->
-    <header class="text-center mb-16 sm:mb-20 mt-10 sm:mt-16 fade-in-up">
-      <h1 id="sponsors-title"
-          class="gallery-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest bg-gradient-to-r from-amber-200 via-yellow-400 to-red-500 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(120,60,10,0.5)] leading-tight px-2">
-        Our Grand Sponsors
-      </h1>
-
-      <div class="mx-auto mt-4 h-[3px] sm:h-[4px] w-24 sm:w-36 bg-gradient-to-r from-red-700 via-amber-400 to-red-700 rounded-full animate-pulse"></div>
-
-      <p class="text-base sm:text-lg md:text-xl text-amber-100 mt-6 font-[Georgia] italic tracking-wide drop-shadow-[0_0_6px_rgba(120,60,10,0.5)] px-2 sm:px-6">
-        The generous partners who help make the magic happen.
-      </p>
-    </header>
-
-    <!-- WHY SPONSOR US -->
-    <section id="why-sponsor-us" class="mb-16 sm:mb-20 fade-in-up">
-      <div class="vintage-panel mx-auto max-w-4xl p-6 sm:p-8 md:p-10">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-luckiest-guy uppercase text-center mb-6 text-amber-300 drop-shadow-lg">
-          Why Sponsor Us?
-        </h2>
-        <div class="text-center font-open-sans text-amber-100 text-base sm:text-lg leading-relaxed space-y-4 px-2 sm:px-6">
-          <p>
-            UDGAM’25, one of the biggest cultural festivals in North East India, offers your brand a great opportunity to connect with a large and diverse audience. Partnering with our reputed institute of national importance will help your brand build a stronger presence across the region and beyond.
-          </p>
-          <p>
-            Our sponsors receive excellent visibility through mentions on our official website, social media platforms, and displays across the event venue.
-          </p>
-          <p>
-            By supporting us, you promote your brand while fostering creativity, empowering young minds, and building lasting connections for future collaborations.
-          </p>
-          <a href="mailto:udgam@nitsikkim.ac.in"
-            class="inline-block mt-6 px-6 sm:px-8 py-3 text-white font-bold uppercase rounded-lg shadow-xl vintage-button text-sm sm:text-base">
-            Inquire About Sponsorship
-          </a>
+      <!-- HEADER -->
+      <header class="mt-12 text-center mb-16 fade-in-up">
+        <h1 id="sponsors-title"
+          class="gallery-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest bg-gradient-to-r from-amber-200 via-yellow-400 to-red-500 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(120,60,10,0.5)] leading-tight">
+          Our Grand Sponsors
+        </h1>
+        <div
+          class="mx-auto mt-4 h-[3px] w-32 sm:w-44 bg-gradient-to-r from-red-700 via-amber-400 to-red-700 rounded-full animate-pulse">
         </div>
-      </div>
-    </section>
+        <p
+          class="text-lg sm:text-xl text-amber-100 mt-6 italic tracking-wide drop-shadow-[0_0_6px_rgba(120,60,10,0.5)]">
+          With heartfelt gratitude, we celebrate our partners who make Udgam 2025 shine brighter.
+        </p>
+      </header>
 
-    <!-- SPONSOR TIERS -->
-    <section id="sponsor-tiers" class="mt-16 sm:mt-20 fade-in-up">
-      <div class="text-center mb-12 sm:mb-16">
-        <div class="inline-block px-6 sm:px-10 py-3 sm:py-4 committee-label bg-black/40 rounded-xl border border-amber-500">
-          <p class="text-lg sm:text-xl md:text-2xl font-semibold font-open-sans uppercase text-amber-50 tracking-wider">
-            Our Sponsors
-          </p>
-        </div>
-      </div>
+      <!-- SPONSOR CATEGORIES -->
+      <section class="fade-in-up space-y-20">
 
-      <div id="sponsor-cards" class="flex flex-wrap justify-center gap-6 sm:gap-10 px-2 sm:px-4">
-        <div class="sponsor-card w-full sm:w-[90%] md:w-[70%] lg:max-w-lg p-6 sm:p-10 text-center shadow-2xl relative">
-          <h3 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-luckiest-guy uppercase text-center text-red-700">
-            Coming Soon!
-          </h3>
+        <!-- BANKING PARTNERS -->
+        <div class="text-center">
+          <div class="section-label">Our Sponsers</div>
+          <div class="flex flex-wrap justify-center gap-10 mt-6">
+
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/canaraLogo.avif" alt="Canara Bank" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">Canara Bank</h3>
+            </div>
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/unionLogo.jpg" alt="Union Bank" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">Union Bank of India</h3>
+            </div>
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/nbccLogo.png" alt="Union Bank" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">NBCC</h3>
+            </div>
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/cisbLogo.png" alt="Union Bank" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">CISB</h3>
+            </div>
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/cocaColaLogo.png" alt="Coca Cola" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">Coca-Cola</h3>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+
+        <!-- EVENT PARTNER -->
+        <div class="text-center">
+          <div class="section-label">Racing Partner</div>
+          <div class="flex flex-wrap justify-center gap-10 mt-6">
+            <div class="sponsor-card p-8 w-72 text-center">
+              <img src="./assets/images/ktmLogo.png" alt="KTM Logo" class="sponsor-logo">
+              <h3 class="text-3xl font-bold text-amber-200 mb-2">KTM</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOD PARTNERS -->
+        <div class="text-center">
+          <div class="section-label">Food Partner</div>
+          <div class="flex flex-wrap justify-center gap-10 mt-6">
+          <div class="sponsor-card p-8 w-72">
+            <img src="./assets/images/twinSpringsLogo.png" alt="Twin Springs" class="sponsor-logo">
+            <h3 class="text-2xl font-semibold text-amber-200">Twin Spring</h3>
+
+          </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- HOSPITALITY PARTNERS -->
+        <div class="text-center">
+          <div class="section-label">Hospitality Partners</div>
+          <div class="flex flex-wrap justify-center gap-10 mt-6">
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/ravanglaStarLogo.jpeg" alt="Hotel Ravangla Star" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">Hotel Ravangla Star</h3>
+              
+            </div>
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/buddhaResidencyLogo.png" alt="Buddha Residency" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">Buddha Residency</h3>
+              
+            </div>
+            <div class="sponsor-card p-8 w-72">
+              <img src="./assets/images/alnusRavanglaLogo.png" alt="The Alnus Ravangla" class="sponsor-logo">
+              <h3 class="text-2xl font-semibold text-amber-200">The Alnus Ravangla</h3>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
   </div>
 
-  <!-- Scroll animation script -->
   <script>
     const faders = document.querySelectorAll('.fade-in-up');
     const appearOptions = { threshold: 0.1 };
-
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -173,10 +258,7 @@
         observer.unobserve(entry.target);
       });
     }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
+    faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
 </body>
 

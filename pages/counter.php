@@ -29,13 +29,12 @@
     document.addEventListener('DOMContentLoaded', () => {
      
         // Countdown Timer
-        const specificDate = new Date(2025, 10, 4, 11, 59, 59);
+        const specificDate = new Date(2025, 10, 4, 23, 59, 59);
         console.log('Countdown to:', specificDate);
 
         function updateCountdown() {
             const now = new Date();
             const diff = specificDate - now;
-            
             if (diff < 0) {
                 document.getElementById('countdown').style.display = 'none';
                 document.getElementById('cs').textContent = 'UDGAM 2K25 HAS BEGUN!';
@@ -77,7 +76,7 @@
                     setTimeout(() => {
                         imageEle.style.opacity = '1';
                     }, 50);
-                }, 1000);
+                }, 500);
             }
         }
 

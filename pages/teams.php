@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Udgam 2025 Committees</title>
+    <title>Committees</title>
     <link rel="icon" type="image/x-icon" href="<?= $path['fav_dir']?>/udg2k25.png">
   <script src="<?= $path['js_dir']?>/tailwind.js"></script>
   <link rel="stylesheet" href="<?=$path['css_dir']?>/teams.css" />
@@ -122,17 +122,49 @@
     100% { transform: translateY(0); opacity: 1; }
   }
 
+  /* --- START NEW MOBILE-ONLY COLLAPSE CSS --- */
+    @media (max-width: 768px) {
+        /* This hides the content by default on mobile screens. */
+        .team-content-collapse {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+        }
+        
+        /* This is the state applied by JavaScript when the title is clicked. */
+        .team-content-collapse.expanded {
+            max-height: 6000px; /* Large value to ensure content shows */
+            opacity: 1;
+            transition: max-height 0.6s ease-in, opacity 0.6s ease-in;
+        }
+        /* Ensure the cursor is set to pointer to indicate clickable element */
+        .toggle-committee-btn {
+            cursor: pointer;
+        }
+    }
+
+    @media (min-width: 769px) {
+        /* CRUCIAL: Overrides mobile collapse logic on desktop to ensure everything is visible. */
+        .team-content-collapse {
+            max-height: none !important; 
+            opacity: 1 !important;
+            overflow: visible !important;
+        }
+    }
+    /* --- END NEW MOBILE-ONLY COLLAPSE CSS --- */
     </style>
 </head>
-
+<link rel="stylesheet" href="<?=$path['css_dir']?>/universalStyle.css" />
 <body class="bg-carnival-stage min-h-screen relative">
 
 
     <div class="container mx-auto px-4 py-16 text-white relative z-10 carnival-content-frame">
     <?php include "{$path['pages_dir']}/header.php" ?>
+    <?php include "{$path['pages_dir']}/doors.php" ?>
+    <div class="main-content-wrapper" id="mainContent">
         <header class="text-center mb-16 mt-16">
             <div class="flex flex-col items-center mb-16 relative px-4 sm:px-6 md:px-0">
-                <!-- Vintage Divider with Animation -->
                 <div class="flex justify-center mb-6 relative w-full max-w-xs sm:max-w-sm md:max-w-md">
                     <div class="w-full h-1 bg-yellow-300 rounded-full relative animate-pulse vintage-divider">
                         <span class="absolute w-2 h-2 sm:w-3 sm:h-3 bg-yellow-300 rounded-full top-1/2 -translate-y-1/2 -left-2 shadow-md vintage-dot"></span>
@@ -140,7 +172,6 @@
                     </div>
                 </div>
 
-                <!-- Fest Title -->
                 <h1 id="fest-title"
                     class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold pb-4 font-luckiest-guy uppercase tracking-wide sm:tracking-wider md:tracking-widest text-center
                         text-amber-200 drop-shadow-[0_0_4px_rgba(255,200,100,0.4)] sm:drop-shadow-[0_0_8px_rgba(255,190,80,0.5)] md:drop-shadow-[0_0_12px_rgba(255,180,60,0.6)] lg:drop-shadow-[0_0_18px_rgba(255,160,40,0.7)]">
@@ -148,7 +179,6 @@
                 </h1>
 
 
-                <!-- Fest Description -->
                 <p class="text-base sm:text-lg md:text-xl lg:text-lg mb-10 font-open-sans text-[#4E2A1E] tracking-wide drop-shadow-[1px_1px_2px_rgba(30,15,10,0.4)] vintage-text animate-slide-up text-center max-w-xl sm:max-w-2xl md:max-w-3xl">
                     Meet the passionate team members who make our college fest a grand success
                 </p>
@@ -529,7 +559,7 @@
         <div id="organising-team-container" class="mt-16 hidden"></div>
         </div>
 
-
+    </div>
     <script>
     // script.js
 
@@ -581,6 +611,7 @@
                     mail: "b230105@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/gaurav-kumar-469899281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 },
+                
             ],
         },
         {
@@ -592,12 +623,12 @@
                     mail: "b230137@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/shashi-2419a0271",
                 },
-                // {
-                //     name: "Satvik Choudhary",
-                //     img: "./assets/images/.png",
-                //     mail: "varun@mail.com",
-                //     linkedin: "",
-                // },
+                {
+                    name: "Satvik Choudhary",
+                    img: "./assets/images/b230022@nitsikkim.ac.in.png",
+                    mail: "b230022@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/satvik-choudhary-30391a284",
+                },
             ],
         },
         {
@@ -615,6 +646,7 @@
                     mail: "b230047@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/debopriyo-khan-1b766328a",
                 },
+                { name: "Teegan Subba", img: "./assets/images/b230091@nitsikkim.ac.in.png", mail: "b230091@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/teegan-subba-561b23310" },
                 {
                     name: "Abhishek Kumar Gond",
                     img: "./assets/images/b230093@nitsikkim.ac.in.png",
@@ -627,6 +659,7 @@
                     mail: "b230123@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/anooppatel582",
                 },
+                
             ],
         },
         {
@@ -695,7 +728,7 @@
         {
             name: "Sponsorship",
             leads: [
-                { name: "Neymit Narjinary", img: "./assets/images/b230014@nitsikkim.ac.in.png", mail: "b230014@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/neymit-narjinary-499b99327?trk=contact-info" },
+                
                 {
                     name: "Trilokjeet Basu",
                     img: "./assets/images/b230140@nitsikkim.ac.in.png",
@@ -708,6 +741,7 @@
                     mail: "b230015@nitsikkim.ac.in",
                     linkedin: "https://www.linkedin.com/in/neeraj-kumar-a67457347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 },
+                { name: "Neymit Narjinary", img: "./assets/images/b230014@nitsikkim.ac.in.png", mail: "b230014@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/neymit-narjinary-499b99327?trk=contact-info" },
             ],
             associates: [
                 {
@@ -718,6 +752,24 @@
                 },
                 
             ],
+        },
+        {
+            name: "Content",
+            leads: [
+                {
+                    name: "Srijan Mahajan",
+                    img: "./assets/images/b230089@nitsikkim.ac.in.png",
+                    mail: "b230089@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/srijan-mahajan-764b2035a/",
+                },
+                {
+                    name: "Sakshi Roy",
+                    img: "./assets/images/b230086@nitsikkim.ac.in.png",
+                    mail: "b230086@nitsikkim.ac.in",
+                    linkedin: "https://www.linkedin.com/in/sakshi-roy-bb1485316/",
+                },
+            ],
+            associates: [],
         },
         {
             name: "Event Management",
@@ -732,16 +784,16 @@
             ],
             associates: [
                 { name: "Akriti Patel", img: "./assets/images/b230097@nitsikkim.ac.in.png", mail: "b230097@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/akriti-patel-991684330/" },
-                { name: "Satya Ranjan Barik", img: "./assets/images/b230023@nitsikkim.ac.in.png", mail: "b230023@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/satya-ranjan-barik-7966b0317" },
                 { name: "Nehal Rai", img: "./assets/images/b230111@nitsikkim.ac.in.png", mail: "b230111@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/nehal-rai-6b8209381" },
                 { name: "Prem Kumar Shah", img: "./assets/images/b230059@nitsikkim.ac.in.png", mail: "b230059@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/prem-kumar-shah-01ba36316" },
-                { name: "Abhishek Kumar", img: "./assets/images/b230071@nitsikkim.ac.in.png", mail: "b230071@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/abhishek-kumar-a1a32a339" },
+                { name: "Satya Ranjan Barik", img: "./assets/images/b230023@nitsikkim.ac.in.png", mail: "b230023@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/satya-ranjan-barik-7966b0317" },
                 {
                     name: "Hritik Gautam",
                     img: "./assets/images/b230052@nitsikkim.ac.in.jpg.png",
                     mail: "b230052@nitsikkim.ac.in.jpg",
                     linkedin: "https://www.linkedin.com/in/hritik-gautam-a26008304",
                 },
+                { name: "Abhishek Kumar", img: "./assets/images/b230071@nitsikkim.ac.in.png", mail: "b230071@nitsikkim.ac.in", linkedin: "https://www.linkedin.com/in/abhishek-kumar-a1a32a339" },
             ],
         },
         {
@@ -769,24 +821,7 @@
                 },
             ],
         },
-        {
-            name: "Content",
-            leads: [
-                {
-                    name: "Srijan Mahajan",
-                    img: "./assets/images/b230089@nitsikkim.ac.in.png",
-                    mail: "b230089@nitsikkim.ac.in",
-                    linkedin: "https://www.linkedin.com/in/srijan-mahajan-764b2035a/",
-                },
-                {
-                    name: "Sakshi Roy",
-                    img: "./assets/images/b230086@nitsikkim.ac.in.png",
-                    mail: "b230086@nitsikkim.ac.in",
-                    linkedin: "https://www.linkedin.com/in/sakshi-roy-bb1485316/",
-                },
-            ],
-            associates: [],
-        },
+        
         {
             name: "Social Media",
             leads: [
@@ -980,8 +1015,9 @@
         // as the sections themselves define the role (Leads or specific Organising Group).
         const subTitle = ''; 
             
+        // FIX: Changed fixed height h-[440px] to min-h-[440px] to prevent cropping.
         return `
-        <div class="member-card w-[300px] h-[440px] transform transition duration-500 hover:scale-[1.03] relative carnival-member-card">
+        <div class="member-card w-[300px] min-h-[440px] transform transition duration-500 hover:scale-[1.03] relative carnival-member-card">
         <div class="card-content-wrapper">
             <div class="relative flex justify-center mb-4">
             <div class="member-avatar w-[170px] h-[170px] rounded-full flex items-center justify-center border-4 border-[#E6B35A]" style="background-color: #a36025b8;">
@@ -1027,26 +1063,43 @@
     `;
     }
 
-    // Create team cards (Used for main Committees only)
-    function createTeam(team) {
-        return `
-        <div class="mt-16">
-        <div class="text-center">
-            <div id="committee-title-card" class="inline-block px-10 py-5 rounded-[15px] shadow-[0_10px_20px_rgba(30,15,10,0.5)] bg-gradient-to-br from-[#D4A373] to-[#8B5E3C] transition duration-500 hover:scale-[1.05] hover:shadow-[0_12px_25px_rgba(30,15,10,0.6)] cursor-pointer relative z-10 carnival-title-card">
-            <h2 class="text-3xl md:text-4xl font-bold font-luckiest-guy uppercase bg-gradient-to-r from-[#E6BE8A] to-[#B88746] bg-clip-text text-transparent tracking-wide" style="text-shadow:-2px -2px 0 #8b5a10,2px -2px 0 #502b1e,-2px 2px 0 #4E2A1E,2px 2px 0 #4E2A1E,0 0 10px rgba(135,100,30,0.8),5px 5px 0 rgba(30,15,10,0.9);">${
-                team.name
-            }</h2>
-            <div class="ribbon top-left"></div>
-            <div class="ribbon bottom-right"></div>
+    // THE CORRECTED createTeam function: Added 'inline-block' to H2 and conditional 'initial-expanded' class
+    function createTeam(team, index) {
+    const teamId = team.name.replace(/\s/g, '-');
+    
+    // Add 'initial-expanded' class only to the very first item (index 0)
+    const initialExpandedClass = (index === 0) ? ' initial-expanded' : ''; 
+    
+    return `
+        <div class="mt-16 team-committee-group" id="group-${teamId}">
+            <div class="text-center">
+                <div id="committee-title-card-${teamId}"
+                class="inline-flex px-8 py-4 rounded-[15px] shadow-[0_10px_20px_rgba(30,15,10,0.5)] 
+                    bg-gradient-to-br from-[#D4A373] to-[#8B5E3C] transition duration-500 
+                    hover:scale-[1.05] hover:shadow-[0_12px_25px_rgba(30,15,10,0.6)] 
+                    cursor-pointer relative z-10 carnival-title-card
+                    items-center justify-center toggle-committee-btn w-fit"
+                data-target-id="content-${teamId}"
+                data-team-name="${team.name}">
+                    
+                    <h2 class="inline-block text-3xl md:text-4xl font-bold font-luckiest-guy uppercase bg-gradient-to-r from-[#E6BE8A] to-[#B88746] bg-clip-text text-transparent tracking-wide" 
+                        style="text-shadow:-2px -2px 0 #8b5a10,2px -2px 0 #502b1e,-2px 2px 0 #4E2A1E,2px 2px 0 #4E2A1E,0 0 10px rgba(135,100,30,0.8),5px 5px 0 rgba(30,15,10,0.9);">
+                        ${team.name}
+                    </h2>
+                    
+                    <div class="ribbon top-left"></div>
+                    <div class="ribbon bottom-right"></div>
+                </div>
             </div>
-        </div>
 
-        ${createCommitteeSection("Leads", team.leads, "bg-red-600")}
-        ${createCommitteeSection(
-            "Associate Leads",
-            team.associates,
-            "bg-blue-600"
-        )}
+            <div id="content-${teamId}" class="team-content-collapse${initialExpandedClass}"> 
+                ${createCommitteeSection("Leads", team.leads, "bg-red-600")}
+                ${createCommitteeSection(
+                    "Associate Leads",
+                    team.associates,
+                    "bg-blue-600"
+                )}
+            </div>
         </div>
     `;
     }
@@ -1080,7 +1133,60 @@
     // ------------------------------------------------
 
 
-    // Function to toggle team visibility (Unchanged logic, just using the new render function)
+    // 3. NEW/REVISED FUNCTION TO HANDLE MOBILE COLLAPSE
+    function setupCommitteeToggle() {
+        const committeeButtons = document.querySelectorAll('.toggle-committee-btn');
+
+        committeeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Only apply the toggle logic on screens up to 768px (mobile/tablet)
+                if (window.innerWidth <= 768) {
+                    const targetId = button.getAttribute('data-target-id');
+                    const targetContent = document.getElementById(targetId);
+                    
+                    const isExpanding = !targetContent.classList.contains('expanded');
+
+                    // Collapse all others before expanding the target
+                    document.querySelectorAll('.team-content-collapse').forEach(content => {
+                        if (content.id !== targetId) {
+                            content.classList.remove('expanded');
+                        }
+                    });
+
+                    // Toggle the 'expanded' class on the target content
+                    targetContent.classList.toggle('expanded');
+                    
+                    // NEW FIX: Smooth scroll the title into view only when expanding
+                    if (isExpanding) {
+                        setTimeout(() => {
+                             button.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                        }, 500); // Wait for half of the transition duration
+                    }
+                }
+            });
+        });
+    }
+
+    // Function to handle initial mobile state after content is injected
+    function setInitialMobileState() {
+        if (window.innerWidth <= 768) {
+            // Find the committee content div that should be expanded by default
+            const firstCommitteeContent = document.querySelector('.team-content-collapse.initial-expanded');
+            
+            // Check if we are on the 'Committees' tab
+            if (document.getElementById('committees-btn').classList.contains('active') && firstCommitteeContent) {
+                // Collapse all content first to ensure a clean state
+                document.querySelectorAll('.team-content-collapse').forEach(content => {
+                    content.classList.remove('expanded');
+                });
+                // Expand the designated first one (Web Development)
+                firstCommitteeContent.classList.add('expanded');
+            }
+        }
+    }
+
+
+    // Function to toggle team visibility (Modified to call setInitialMobileState)
     function toggleTeams(teamType) {
         const coreTeamSection = document.getElementById('core-team-section');
         const committeesContainer = document.getElementById('teams-container');
@@ -1109,18 +1215,31 @@
         });
         
         attachContactListeners();
+        
+        // If switching TO the committees tab, apply initial mobile state
+        if (teamType === 'committees') {
+            setInitialMobileState();
+        } else {
+            // Collapse all content when switching away from the committees tab
+            document.querySelectorAll('.team-content-collapse').forEach(content => {
+                content.classList.remove('expanded');
+            });
+        }
     }
 
 
     // Render all teams and attach listeners
     document.addEventListener("DOMContentLoaded", () => {
         const container = document.getElementById("teams-container");
-        // Render the committee teams into the hidden container once
-        container.innerHTML = teams.map(createTeam).join("");
+        
+        // NOTE: The .map function must be called with the index argument to pass it to createTeam
+        container.innerHTML = teams.map((team, index) => createTeam(team, index)).join("");
         
         // RENDER THE NEW UNIQUE ORGANISING TEAM STRUCTURE
         renderOrganisingTeamUnique(); 
-        // --------------------------
+        
+        // Setup the mobile collapse logic (click handlers)
+        setupCommitteeToggle(); 
 
         attachContactListeners();
 
@@ -1136,6 +1255,22 @@
         
         // Initial state is set to Core Team 
         toggleTeams('core');
+    });
+
+    // Added a resize listener to correct behavior if users switch between screen sizes
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // If resizing to desktop, ensure all committees are expanded, regardless of previous mobile state
+            if (window.innerWidth > 768) {
+                const contentContainers = document.querySelectorAll('.team-content-collapse');
+                contentContainers.forEach(c => c.classList.remove('expanded'));
+            } else {
+                 // If resizing to mobile, apply the default expansion if the Committees tab is active
+                setInitialMobileState();
+            }
+        }, 250);
     });
 
 </script>

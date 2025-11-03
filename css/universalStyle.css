@@ -16,11 +16,13 @@
     }
 }
 
-
+::-webkit-scrollbar {
+    display: none;
+}
 .animate-swing {
     animation: swing 3s ease-in-out infinite;
 }
 
 .animate-swing-reverse {
     animation: swing-reverse 3s ease-in-out infinite;
-}
+}/* Simplified Loading Screen */

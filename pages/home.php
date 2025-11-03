@@ -60,7 +60,7 @@ $team_contacts = [
         'email' => 'b230073@nitsikkim.ac.in',
         'pic' => '/ayan.jpeg',
         'linkedin' => '#',
-        'instagram' => '#'
+        'instagram' => 'https://www.instagram.com/an_obnoxious_lifter'
     ],
     [
         'name' => 'Indrani Adhikary',
@@ -112,6 +112,7 @@ $team_contacts = [
 <body class="overflow-x-hidden">
     <?php include "{$path['pages_dir']}/counter.php" ?>
     <?php include "{$path['pages_dir']}/doors.php" ?>
+    <?php include 'header.php' ?>
     <div class="main-content-wrapper" id="mainContent">
         <div class="w-screen flex flex-col smooth-scroll overflow-x-hidden">
 
@@ -119,7 +120,7 @@ $team_contacts = [
             <div id="home" class="relative min-h-screen sm:min-h-[110vh] lg:min-h-[130vh] w-screen flex justify-center overflow-hidden">
                 <!-- Background Image -->
                 <img src="" class="absolute inset-0 w-full h-full object-cover update -z-10" alt="Welcome">
-                <?php include 'header.php' ?>
+                
                 <!-- Hero Content -->
                 <div class="flex justify-center items-center w-full px-4 sm:px-6 md:px-8 absolute top-1/2 -translate-y-1/2">
                     <div class="text-center scale-animate">

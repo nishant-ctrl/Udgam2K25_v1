@@ -7,7 +7,9 @@
 .font-open-sans {
     font-family: 'Open Sans', sans-serif;
 }
-
+::-webkit-scrollbar {
+    display: none;
+}
 /* 2. Background and Structure */
 
 /* Main Title Style - Rustic Wood Grain Fill */
