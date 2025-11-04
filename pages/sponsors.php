@@ -237,6 +237,18 @@
             </a>
           </div>
         </div>
+        <div class="text-center">
+          <div class="section-label">Fashion Partner</div>
+          <div class="flex flex-wrap justify-center gap-10 mt-6">
+            <a href="https://thehouseofrare.com/?srsltid=AfmBOooaGI3audNX21a6xyXkFwyh7RMVcgiEqypYasdAvWjQzPvLVMW-">
+              <div class="sponsor-card p-8 w-72">
+                <img src="./assets/images/rarerabbitLogo.png" alt="Twin Springs" class="sponsor-logo">
+                <h3 class="text-2xl font-semibold text-amber-200">Rare Rabbit</h3>
+    
+              </div>
+            </a>
+          </div>
+        </div>
 
 
 
